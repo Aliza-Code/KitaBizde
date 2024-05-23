@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply dark:bg-sky-950;
+  }
+}
+
+@font-face {
+  font-family: "Anjoman-FaNum-Medium";
+  src: url("/public/Anjoman-FaNum-Medium.woff");
+}
+@font-face {
+  font-family: "Anjoman-FaNum-Light";
+  src: url("/public/Anjoman-FaNum-Light.woff");
+}
+@font-face {
+  font-family: "Anjoman-FaNum-Black";
+  src: url("/public/Anjoman-FaNum-Black.woff");
+}
+@font-face {
+  font-family: "Anjoman-FaNum-Bold";
+  src: url("/public/Anjoman-FaNum-Bold.woff");
+}
+@font-face {
+  font-family: "Inder-Regular";
+  src: url("/public/Inder-Regular.otf");
+}
