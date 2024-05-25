@@ -1,0 +1,14 @@
+C:\Users\Huawei\CS-projects\Asp.NetCoreAdvance\KitaBizde\KitaBizde.DataLayer\bin\Debug\net8.0\KitaBizde.DataLayer.deps.json
+C:\Users\Huawei\CS-projects\Asp.NetCoreAdvance\KitaBizde\KitaBizde.DataLayer\bin\Debug\net8.0\KitaBizde.DataLayer.dll
+C:\Users\Huawei\CS-projects\Asp.NetCoreAdvance\KitaBizde\KitaBizde.DataLayer\bin\Debug\net8.0\KitaBizde.DataLayer.pdb
+C:\Users\Huawei\CS-projects\Asp.NetCoreAdvance\KitaBizde\KitaBizde.DataLayer\obj\Debug\net8.0\KitaBizde.DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Huawei\CS-projects\Asp.NetCoreAdvance\KitaBizde\KitaBizde.DataLayer\obj\Debug\net8.0\KitaBizde.DataLayer.AssemblyInfoInputs.cache
+C:\Users\Huawei\CS-projects\Asp.NetCoreAdvance\KitaBizde\KitaBizde.DataLayer\obj\Debug\net8.0\KitaBizde.DataLayer.AssemblyInfo.cs
+C:\Users\Huawei\CS-projects\Asp.NetCoreAdvance\KitaBizde\KitaBizde.DataLayer\obj\Debug\net8.0\KitaBizde.DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\Huawei\CS-projects\Asp.NetCoreAdvance\KitaBizde\KitaBizde.DataLayer\obj\Debug\net8.0\KitaBizde.DataLayer.dll
+C:\Users\Huawei\CS-projects\Asp.NetCoreAdvance\KitaBizde\KitaBizde.DataLayer\obj\Debug\net8.0\refint\KitaBizde.DataLayer.dll
+C:\Users\Huawei\CS-projects\Asp.NetCoreAdvance\KitaBizde\KitaBizde.DataLayer\obj\Debug\net8.0\KitaBizde.DataLayer.pdb
+C:\Users\Huawei\CS-projects\Asp.NetCoreAdvance\KitaBizde\KitaBizde.DataLayer\obj\Debug\net8.0\ref\KitaBizde.DataLayer.dll
+C:\Users\Huawei\CS-projects\Asp.NetCoreAdvance\KitaBizde\KitaBizde.DataLayer\bin\Debug\net8.0\KitaBizde.DataLayer.runtimeconfig.json
+C:\Users\Huawei\CS-projects\Asp.NetCoreAdvance\KitaBizde\KitaBizde.DataLayer\obj\Debug\net8.0\KitaBizde.DataLayer.csproj.AssemblyReference.cache
+C:\Users\Huawei\CS-projects\Asp.NetCoreAdvance\KitaBizde\KitaBizde.DataLayer\obj\Debug\net8.0\KitaBizde.DataLayer.genruntimeconfig.cache
