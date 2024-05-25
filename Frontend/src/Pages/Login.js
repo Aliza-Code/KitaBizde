@@ -75,11 +75,11 @@ export default function Login() {
 
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    fetch("https://localhost:/api/students")
-      .then((response) => response.json())
-      .then((data) => console.log(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://localhost:/api/students")
+  //     .then((response) => response.json())
+  //     .then((data) => console.log(data));
+  // }, []);
 
   return (
     <>
@@ -100,9 +100,9 @@ export default function Login() {
                 value={values.email}
                 onChange={handleChange}
               ></input>
-              {/* {errors.email && (
+              {errors.email && (
                 <p className="text-[#f00] text-xs">{errors.email}</p>
-              )} */}
+              )}
 
               <input
                 className="p-2 rounded-md w-full outline-none placeholder:text-sm"
@@ -153,7 +153,7 @@ export default function Login() {
             </button>
 
             <div className="mt-5 text-xs border-b border-sky-900 py-4 text-sky-900">
-              <a href="#">رمزعبور خود را فراموش کرده‌اید ؟</a>
+              <Link to={'/forget'}>رمزعبور خود را فراموش کرده‌اید ؟</Link>
             </div>
 
             <div className="mt-3 text-xs flex justify-between gap-1 items-center text-sky-900">
