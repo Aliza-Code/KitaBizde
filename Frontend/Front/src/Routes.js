@@ -5,6 +5,7 @@ import Contact from "./Pages/Contact";
 import Cart from "./Pages/Cart";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
+import ForgetPass from "./Pages/ForgetPass";
 
 
 const routes = [
@@ -15,6 +16,7 @@ const routes = [
   { path: "/cart", element: <Cart></Cart> },
   { path: "/login", element: <Login></Login> },
   { path: "/register", element: <Register></Register> },
+  { path: "/forget", element: <ForgetPass></ForgetPass> },
 ];
 
 export default routes;
