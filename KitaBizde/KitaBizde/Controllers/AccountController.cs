@@ -18,10 +18,12 @@ namespace KitaBizde.web.Controllers
     public class AccountController : ControllerBase
     {
         private IUserService _userService;
+        private IViewRenderService _viewRender;
 
-        public AccountController(IUserService userService)
+        public AccountController(IUserService userService, IViewRenderService viewRender)
         {
             _userService = userService;
+            _viewRender= viewRender;
         }
 
         #region Register
@@ -126,7 +128,8 @@ namespace KitaBizde.web.Controllers
                 ModelState.AddModelError("Email", "کاربری یافت نشد !");
                 return BadRequest(ModelState);
             }
-            //SendEmail.Send(user.Email, "بازیابی حساب کاربری",)
+            string bodyEmail = _viewRender.RenderToStringAsync("_ForgotPassword", user);
+            SendEmail.Send(user.Email, "بازیابی حساب کاربری", bodyEmail);
             return Ok();
         }
         #endregion

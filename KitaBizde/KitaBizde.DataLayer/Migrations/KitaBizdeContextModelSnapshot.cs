@@ -86,12 +86,6 @@ namespace KitaBizde.DataLayer.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<string>("BookLevelLevelId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("BookLevelLevelId1")
-                        .HasColumnType("int");
-
                     b.Property<int>("BookPrice")
                         .HasColumnType("int");
 
@@ -162,9 +156,9 @@ namespace KitaBizde.DataLayer.Migrations
 
                     b.HasIndex("AuthorId");
 
-                    b.HasIndex("BookLevelLevelId1");
-
                     b.HasIndex("GroupId");
+
+                    b.HasIndex("LevelId");
 
                     b.HasIndex("SubGroup");
 
@@ -398,15 +392,15 @@ namespace KitaBizde.DataLayer.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("KitaBizde.DataLayer.Entities.Book.BookLevel", "BookLevel")
-                        .WithMany("Books")
-                        .HasForeignKey("BookLevelLevelId1")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("KitaBizde.DataLayer.BookGroup", "BookGroup")
                         .WithMany("Books")
                         .HasForeignKey("GroupId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("KitaBizde.DataLayer.Entities.Book.BookLevel", "BookLevel")
+                        .WithMany("Books")
+                        .HasForeignKey("LevelId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 

@@ -83,7 +83,8 @@ namespace KitaBizde.DataLayer.Entities.Book
 
         public string? Package { get; set; }
 
-        public string? BookLevelLevelId { get; set; }
+        //public string? BookLevelLevelId { get; set; }
+        //public string? BookLevelLevelId1 { get; set; }
 
         public bool IsDelete { get; set; }
 
@@ -102,6 +103,7 @@ namespace KitaBizde.DataLayer.Entities.Book
         [ForeignKey("SubGroup")]
         public BookGroup Group { get; set; }
 
+        [ForeignKey("LevelId")]
         public BookLevel BookLevel { get; set; }
 
         public List<Order.OrderDetail> OrderDetails { get; set; }
