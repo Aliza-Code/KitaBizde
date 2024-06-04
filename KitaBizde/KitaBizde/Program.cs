@@ -52,6 +52,7 @@ builder.Services.AddDbContext<KitaBizdeContext>(options =>
 #region Ioc
 
 builder.Services.AddTransient<IUserService, UserService>();
+builder.Services.AddTransient<IBookService, BookService>();
 
 #endregion
 
