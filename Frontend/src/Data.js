@@ -56,7 +56,7 @@ const Books = [
     image: Cukur,
     image2: Cukur2,
     fromBook: "Seni seviyourmdan sonra, Ama denmez",
-    stock: "موجود",
+    stock: "ناموجود",
     pageNum: "389",
     caption:
       "گودال نام محله‌ای خطرناک در استانبول است که توسط خانواده‌ی مافیایی به نام کوچاوالی اداره میشود. یک روز، شخصی به نام وارتولو سعادت الدین (ارکان کولچاک) که یک مواد فروش است، به این محله می آید و به ادریس کوچاوالی(ارجان کسال) که پدر این محله است، پیشنهاد فروش مواد مخدر در این محله را میدهد. اما این محله، با اینکه بیشتر اهالی اش اسلحه دارند، قوانین خاصی دارد و یکی از آنها ممنوعیت فروش مواد مخدر در آن است. ادریس قبول نمی‌کند و وارتولو عصبانی میشود و این عصبانیتش باعث کشتن قهرمان کوچاوالی(مصطفی اوستونداگ) پسر ادریس میشود. خانواده کوچاوالی که احساس میکنند، کنترل محله از دست آنها خارج شده، پسر کوچکشان یعنی یاماچ(آراس بولوت) که ده سال است از آنها دور شده را برمیگردانند، تا با کمک او مشکلات را حل کنند، اما گویا مشکلات در این محله تمامی ندارد...",
@@ -65,6 +65,16 @@ const Books = [
     isbn: 9786050950984,
     cover: "شومیز",
     year: 1400,
+    rate: (
+      <>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+      </>
+    ),
+    sells: 62,
     publisher: "Doğan Kitap",
   },
   {
@@ -90,6 +100,16 @@ const Books = [
     isbn: 9786053117384,
     cover: "شومیز",
     year: 1400,
+    rate: (
+      <>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+      </>
+    ),
+    sells: 62,
     publisher: "Destek Yayınları",
   },
   {
@@ -114,6 +134,16 @@ const Books = [
     isbn: 9789750830884,
     cover: "شومیز",
     year: 1400,
+    rate: (
+      <>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+      </>
+    ),
+    sells: 62,
     publisher: "YKY Yayınları",
   },
   {
@@ -139,6 +169,16 @@ const Books = [
     isbn: 9786057906540,
     cover: "شومیز",
     year: 1400,
+    rate: (
+      <>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+      </>
+    ),
+    sells: 62,
     publisher: "Olimpos Yayınları",
   },
   {
@@ -164,6 +204,16 @@ const Books = [
     isbn: 9789750835605,
     cover: "شومیز",
     year: 1400,
+    rate: (
+      <>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+      </>
+    ),
+    sells: 62,
     publisher: "YKY Yayınları",
   },
   {
@@ -188,6 +238,16 @@ const Books = [
     isbn: 9789750724435,
     cover: "شومیز",
     year: 1400,
+    rate: (
+      <>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+      </>
+    ),
+    sells: 62,
     publisher: "Yapı Kredi Yayınları",
   },
   {
@@ -213,6 +273,16 @@ const Books = [
     isbn: 9789753638027,
     cover: "شومیز",
     year: 1400,
+    rate: (
+      <>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+      </>
+    ),
+    sells: 62,
     publisher: "YKY Yayınları",
   },
   {
@@ -238,6 +308,16 @@ const Books = [
     isbn: 9780892552740,
     cover: "شومیز",
     year: 1400,
+    rate: (
+      <>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+      </>
+    ),
+    sells: 62,
     publisher: "YKY Yayınları",
   },
   {
@@ -262,6 +342,16 @@ const Books = [
     isbn: 9786052063354,
     cover: "شومیز",
     year: 1400,
+    rate: (
+      <>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+      </>
+    ),
+    sells: 62,
     publisher: "Olimpos Yayınları",
   },
 
@@ -286,6 +376,17 @@ const Books = [
     cover: "شومیز",
     year: "2022",
     pack: "کتاب درس + کتاب کار + فایل صوتی",
+    rate: (
+      <>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+      </>
+    ),
+    sells: 62,
+    publisher: "Kultur Sanat Basimevi",
   },
   {
     id: 11,
@@ -308,6 +409,16 @@ const Books = [
     cover: "شومیز",
     year: "2022",
     pack: "کتاب درس + کتاب کار + فایل صوتی",
+    rate: (
+      <>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+      </>
+    ),
+    sells: 62,
     publisher: "Kultur Sanat Basimevi",
   },
   {
@@ -331,6 +442,16 @@ const Books = [
     cover: "شومیز",
     year: "2022",
     pack: "کتاب درس + کتاب کار + فایل صوتی",
+    rate: (
+      <>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+      </>
+    ),
+    sells: 62,
     publisher: "Kultur Sanat Basimevi",
   },
   {
@@ -354,6 +475,16 @@ const Books = [
     cover: "شومیز",
     year: "2020",
     pack: "کتاب درس + کتاب کار + فایل صوتی",
+    rate: (
+      <>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+      </>
+    ),
+    sells: 62,
     publisher: "Kultur Sanat Basimevi",
   },
   {
@@ -377,6 +508,16 @@ const Books = [
     cover: "شومیز",
     year: "2020",
     pack: "کتاب درس + کتاب کار + فایل صوتی",
+    rate: (
+      <>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+      </>
+    ),
+    sells: 62,
     publisher: "Kultur Sanat Basimevi",
   },
   {
@@ -400,6 +541,16 @@ const Books = [
     cover: "شومیز",
     year: "2024",
     pack: "کتاب درس + کتاب کار + فایل صوتی",
+    rate: (
+      <>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+      </>
+    ),
+    sells: 62,
     publisher: "Kultur Sanat Basimevi",
   },
   {
@@ -423,6 +574,16 @@ const Books = [
     cover: "شومیز",
     year: "2024",
     pack: "کتاب درس + کتاب کار + فایل صوتی",
+    rate: (
+      <>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+      </>
+    ),
+    sells: 62,
     publisher: "Kultur Sanat Basimevi",
   },
   {
@@ -446,6 +607,16 @@ const Books = [
     cover: "شومیز",
     year: "2024",
     pack: "کتاب درس + کتاب کار + فایل صوتی",
+    rate: (
+      <>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+      </>
+    ),
+    sells: 62,
     publisher: "Kultur Sanat Basimevi",
   },
   {
@@ -469,6 +640,16 @@ const Books = [
     cover: "شومیز",
     year: "2024",
     pack: "کتاب درس + کتاب کار + فایل صوتی",
+    rate: (
+      <>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+      </>
+    ),
+    sells: 62,
     publisher: "Kultur Sanat Basimevi",
   },
   {
@@ -491,6 +672,16 @@ const Books = [
     cover: "شومیز",
     year: "2024",
     pack: "کتاب درس + کتاب کار + فایل صوتی",
+    rate: (
+      <>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+      </>
+    ),
+    sells: 62,
     publisher: "Kultur Sanat Basimevi",
   },
   {
@@ -513,6 +704,17 @@ const Books = [
     cover: "شومیز",
     year: 2022,
     pack: "کتاب درس + کتاب کار + فایل صوتی",
+    rate: (
+      <>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+      </>
+    ),
+    sells: 62,
+    publisher: "tomer",
   },
   {
     id: 21,
@@ -534,6 +736,17 @@ const Books = [
     cover: "شومیز",
     year: 2022,
     pack: "کتاب درس + کتاب کار + فایل صوتی",
+    rate: (
+      <>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+      </>
+    ),
+    sells: 62,
+    publisher: "tomer",
   },
   {
     id: 22,
@@ -555,6 +768,17 @@ const Books = [
     cover: "شومیز",
     year: 2022,
     pack: "کتاب درس + کتاب کار + فایل صوتی",
+    rate: (
+      <>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+      </>
+    ),
+    sells: 62,
+    publisher: "tomer",
   },
   {
     id: 23,
@@ -576,6 +800,17 @@ const Books = [
     cover: "شومیز",
     year: 2015,
     pack: "کتاب درس + کتاب کار + فایل صوتی",
+    rate: (
+      <>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+      </>
+    ),
+    sells: 62,
+    publisher: "yunus emre enstitüsü",
   },
   {
     id: 24,
@@ -597,6 +832,17 @@ const Books = [
     cover: "شومیز",
     year: 2015,
     pack: "کتاب درس + کتاب کار + فایل صوتی",
+    rate: (
+      <>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+      </>
+    ),
+    sells: 62,
+    publisher: "yunus emre enstitüsü",
   },
   {
     id: 25,
@@ -618,6 +864,17 @@ const Books = [
     cover: "شومیز",
     year: 2015,
     pack: "کتاب درس + کتاب کار + فایل صوتی",
+    rate: (
+      <>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+      </>
+    ),
+    sells: 62,
+    publisher: "yunus emre enstitüsü",
   },
   {
     id: 26,
@@ -639,6 +896,17 @@ const Books = [
     cover: "شومیز",
     year: 2015,
     pack: "کتاب درس + کتاب کار + فایل صوتی",
+    rate: (
+      <>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+      </>
+    ),
+    sells: 62,
+    publisher: "yunus emre enstitüsü",
   },
   {
     id: 27,
@@ -660,6 +928,17 @@ const Books = [
     cover: "شومیز",
     year: 2015,
     pack: "کتاب درس + کتاب کار + فایل صوتی",
+    rate: (
+      <>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+      </>
+    ),
+    sells: 62,
+    publisher: "yunus emre enstitüsü",
   },
   {
     id: 28,
@@ -681,6 +960,17 @@ const Books = [
     cover: "شومیز",
     year: 2015,
     pack: "کتاب درس + کتاب کار + فایل صوتی",
+    rate: (
+      <>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star"></ion-icon>
+        <ion-icon name="star-half"></ion-icon>
+      </>
+    ),
+    sells: 62,
+    publisher: "yunus emre enstitüsü",
   },
 ];
 

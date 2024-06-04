@@ -10,7 +10,7 @@ export default function Login() {
     email: "",
     password: "",
   });
-  const [errors, setErrors] = useState();
+  const [errors, setErrors] = useState({});
 
   const isValidEmail = (email) => {
     const emailRegex = /^\S+@\S+\.\S+$/;
@@ -73,14 +73,6 @@ export default function Login() {
     });
   };
 
-  const [data, setData] = useState([]);
-
-  // useEffect(() => {
-  //   fetch("https://localhost:/api/students")
-  //     .then((response) => response.json())
-  //     .then((data) => console.log(data));
-  // }, []);
-
   return (
     <>
       <Navbar></Navbar>
@@ -112,9 +104,9 @@ export default function Login() {
                 value={values.password}
                 onChange={handleChange}
               ></input>
-              {/* {errors.password && (
+              {errors.password && (
                 <p className="text-[#f00] text-xs">{errors.password}</p>
-              )} */}
+              )}
 
               <button className="bg-sky-900 rounded-md text-white py-2 hover:scale-105 duration-300">
                 ورود
@@ -153,7 +145,7 @@ export default function Login() {
             </button>
 
             <div className="mt-5 text-xs border-b border-sky-900 py-4 text-sky-900">
-              <Link to={'/forget'}>رمزعبور خود را فراموش کرده‌اید ؟</Link>
+              <a href="#">رمزعبور خود را فراموش کرده‌اید ؟</a>
             </div>
 
             <div className="mt-3 text-xs flex justify-between gap-1 items-center text-sky-900">
@@ -173,11 +165,7 @@ export default function Login() {
         </div>
       </section>
 
-      {/* <Footer></Footer> */}
-
-      {data.map((i) => (
-        <p>{i.Name}</p>
-      ))}
+      <Footer></Footer>
     </>
   );
 }

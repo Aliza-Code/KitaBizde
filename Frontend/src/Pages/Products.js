@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import ProductCard from "../Components/ProductCard";
 import { Books } from "../Data";
 import {
@@ -15,7 +15,21 @@ const publishes = ["همه انتشارات", ...new Set(Books.map((i) => i.publ
 const authors = ["همه نویسندگان", ...new Set(Books.map((i) => i.author))];
 
 export default function Products() {
-  const [checked, setChecked] = useState(true);
+  const [prods, setProds] = useState(Books);
+  const [checked, setChecked] = useState(false);
+
+  const stockFilter = (i) => {
+    const newProds = Books.filter((j) => j.stock === i);
+    setProds(newProds);
+  };
+  const pubFilter = (i) => {
+    const newProds = Books.filter((j) => j.publisher === i);
+    setProds(newProds);
+  };
+  const authorFilter = (i) => {
+    const newProds = Books.filter((j) => j.author === i);
+    setProds(newProds);
+  };
 
   const [open, setOpen] = useState(0);
   const [alwaysOpen, setAlwaysOpen] = useState(true);
@@ -32,21 +46,22 @@ export default function Products() {
       <Navbar></Navbar>
 
       <h1 className="container text-3xl text-center font-raybold mt-16 mb-6 py-1 border-[2px] border-sky-200 bg-sky-100 rounded-full">
-        محصولات
+        کتاب‌ها
       </h1>
 
       <div className="mb-16 container grid gap-3 grid-cols-7">
         <div className="col-span-7 md:col-span-5">
           <ul className="container hidden sm:flex items-center justify-around gap-6 p-2 shadow-xl dark:text-white bg-gray-50 dark:bg-sky-900 dark:border-gray-700 rounded-md mb-6">
-            <li className="font-raylight text-gray-500 dark:text-gray-300">مرتب‌سازی:</li>
+            <li className="font-raylight text-gray-500 dark:text-gray-300">
+              مرتب‌سازی:
+            </li>
             <Link>گران‌ترین</Link>
             <Link>پرفروش‌ترین</Link>
-            <Link>جدیدترین</Link>
             <Link>ارزان‌ترین</Link>
           </ul>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-1">
-            {Books.map((i) => {
+            {prods.map((i) => {
               if (i.id < 10)
                 return (
                   <div
@@ -58,7 +73,7 @@ export default function Products() {
                 );
             })}
 
-            {Books.map((i) => {
+            {prods.map((i) => {
               if (i.id > 9)
                 return (
                   <div
@@ -76,6 +91,9 @@ export default function Products() {
           <div className="flex items-center justify-center gap-8 rounded-md py-6 bg-gray-50">
             <Switch
               checked={checked}
+              onClick={
+                !checked ? () => stockFilter("موجود") : () => setProds(Books)
+              }
               onChange={(e) => setChecked(e.target.checked)}
               inputProps={{ "aria-label": "controlled" }}
             />
@@ -99,13 +117,20 @@ export default function Products() {
                     {publishes.map((i, index) => (
                       <li
                         key={index}
+                        onClick={() => {
+                          if (i !== "همه انتشارات") {
+                            pubFilter(i);
+                          } else {
+                            setProds(Books);
+                          }
+                        }}
                         className={`flex items-center gap-2 cursor-pointer mb-1.5 hover:underline ${
                           index === 0 ? "font-ray" : "font-inder"
                         }`}
                       >
                         <span
                           className={`flex items-center justify-center ${
-                            index === publishes.length - 1 && "hidden"
+                            index === publishes.length - 1 && ""
                           }`}
                         >
                           <ion-icon name="book-outline"></ion-icon>
@@ -136,6 +161,13 @@ export default function Products() {
                     {authors.map((i, index) => (
                       <li
                         key={index}
+                        onClick={() => {
+                          if (i !== "همه نویسندگان") {
+                            authorFilter(i);
+                          } else {
+                            setProds(Books);
+                          }
+                        }}
                         className={`flex items-center gap-2 cursor-pointer mb-1.5 hover:underline`}
                       >
                         <span

@@ -3,8 +3,7 @@ import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import { Link } from "react-router-dom";
 import signBG from "../img/SignBG.jpg";
-import { IoEyeOutline } from "react-icons/io5";
-import { IoEyeOffOutline } from "react-icons/io5";
+import { IoEyeOutline, IoEyeOffOutline} from "react-icons/io5";
 
 export default function Register() {
   const [values, setValues] = useState({
@@ -13,7 +12,7 @@ export default function Register() {
     password: "",
     confirmPassword: "",
   });
-  const [errors, setErrors] = useState();
+  const [errors, setErrors] = useState({});
 
   const isValidPhoneNumber = (phoneNumber) => {
     const phoneRegex = /^\d{10}$/;
@@ -114,9 +113,9 @@ export default function Register() {
                 value={values.phoneNumber}
                 onChange={handleChange}
               ></input>
-              {/* {errors.phoneNumber && (
+              {errors.phoneNumber && (
                 <p className="text-[#f00] text-xs">{errors.phoneNumber}</p>
-              )} */}
+              )}
 
               <input
                 className="p-2 rounded-md outline-none placeholder:text-sm"
@@ -126,7 +125,7 @@ export default function Register() {
                 value={values.email}
                 onChange={handleChange}
               ></input>
-              {/* {errors.email && <p className="text-[#f00] text-xs">{errors.email}</p>} */}
+              {errors.email && <p className="text-[#f00] text-xs">{errors.email}</p>}
 
               <input
                 className="p-2 rounded-md w-full outline-none placeholder:text-sm"
@@ -136,9 +135,9 @@ export default function Register() {
                 value={values.password}
                 onChange={handleChange}
               ></input>
-              {/* {errors.password && (
+              {errors.password && (
                 <p className="text-[#f00] text-xs">{errors.password}</p>
-              )} */}
+              )}
 
               <input
                 className="p-2 rounded-md w-full outline-none placeholder:text-sm"
@@ -148,9 +147,9 @@ export default function Register() {
                 value={values.confirmPassword}
                 onChange={handleChange}
               ></input>
-              {/* {errors.confirmPassword && (
-                <p className="text-[#f00] text-xs">{errors.phoneNumber}</p>
-              )} */}
+              {errors.confirmPassword && (
+                <p className="text-[#f00] text-xs">{errors.confirmPassword}</p>
+              )}
 
               <button className="bg-sky-900 rounded-md text-white py-2 hover:scale-105 duration-300">
                 ورود
