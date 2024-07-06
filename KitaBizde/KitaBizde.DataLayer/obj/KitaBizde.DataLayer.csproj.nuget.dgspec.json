@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\KitaBizde\\KitaBizde.DataLayer\\KitaBizde.DataLayer.csproj": {}
+    "D:\\Front\\Kitabizde\\KitaBizde\\KitaBizde.DataLayer\\KitaBizde.DataLayer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\KitaBizde\\KitaBizde.DataLayer\\KitaBizde.DataLayer.csproj": {
+    "D:\\Front\\Kitabizde\\KitaBizde\\KitaBizde.DataLayer\\KitaBizde.DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\KitaBizde\\KitaBizde.DataLayer\\KitaBizde.DataLayer.csproj",
+        "projectUniqueName": "D:\\Front\\Kitabizde\\KitaBizde\\KitaBizde.DataLayer\\KitaBizde.DataLayer.csproj",
         "projectName": "KitaBizde.DataLayer",
-        "projectPath": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\KitaBizde\\KitaBizde.DataLayer\\KitaBizde.DataLayer.csproj",
-        "packagesPath": "C:\\Users\\Huawei\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\KitaBizde\\KitaBizde.DataLayer\\obj\\",
+        "projectPath": "D:\\Front\\Kitabizde\\KitaBizde\\KitaBizde.DataLayer\\KitaBizde.DataLayer.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "D:\\Front\\Kitabizde\\KitaBizde\\KitaBizde.DataLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Huawei\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -34,6 +34,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -42,17 +47,17 @@
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.5, )"
+              "version": "[8.0.6, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.0.5, )"
+              "version": "[8.0.6, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.5, )"
+              "version": "[8.0.6, )"
             }
           },
           "imports": [
@@ -71,7 +76,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

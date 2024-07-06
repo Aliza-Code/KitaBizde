@@ -84,7 +84,7 @@ export default function Navlink() {
             </ul>
           </li>
 
-          <Link to={'/products'}>
+          <Link to={'/book'}>
             <a className="flex items-center" href="#">
               محصولات
             </a>

@@ -9,6 +9,11 @@ namespace KitaBizde.Core.DTOs
 {
     public class RegisterViewModel
     {
+        [Display(Name = "موبایل")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [MaxLength(12, ErrorMessage = "{0}نمیتواند بیشتر از {1} کاراکتر باشد")]
+        public int PhoneNumber { get; set; }
+
         [Display(Name = "نام کاربری")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(200, ErrorMessage = "{0}نمیتواند بیشتر از {1} کاراکتر باشد")]

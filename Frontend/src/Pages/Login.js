@@ -144,14 +144,16 @@ export default function Login() {
               ورود ازطریق گوگل
             </button>
 
-            <div className="mt-5 text-xs border-b border-sky-900 py-4 text-sky-900">
-              <a href="#">رمزعبور خود را فراموش کرده‌اید ؟</a>
-            </div>
+            <Link to={"/account/forgetPassword"}>
+              <div className="mt-5 text-xs border-b border-sky-900 py-4 text-sky-900">
+                <a href="#">رمزعبور خود را فراموش کرده‌اید ؟</a>
+              </div>
+            </Link>
 
             <div className="mt-3 text-xs flex justify-between gap-1 items-center text-sky-900">
               <p>عضو کیتاپ‌بیزده نیستید؟</p>
               <Link
-                to={"/register"}
+                to={"/account/register"}
                 className="py-2 px-5 bg-white border rounded-md hover:scale-105 duration-300"
               >
                 عضویت

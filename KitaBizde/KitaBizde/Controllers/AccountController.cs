@@ -46,6 +46,7 @@ namespace KitaBizde.web.Controllers
             //AddUserToDataBase
             DataLayer.Entities.User.User user = new User()
             {
+                PhoneNumber=register.PhoneNumber,
                 Email = FixedText.FixEmail(register.Email),
                 Password = PasswordHelper.EncodePasswordMd5(register.Password),
                 RegisterDate = DateTime.Now,
