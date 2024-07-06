@@ -17,19 +17,21 @@ namespace KitaBizde.web.Controllers
     [ApiController]
     public class AccountController : ControllerBase
     {
+        
         private IUserService _userService;
-        private IViewRenderService _viewRender;
+        private IConfiguration _configuration;
 
-        public AccountController(IUserService userService, IViewRenderService viewRender)
+
+        public AccountController(IUserService userService ,IConfiguration configuration)
         {
             _userService = userService;
-            _viewRender= viewRender;
+            _configuration = configuration;
         }
 
         #region Register
         [HttpPost]
         [Route("Register")]
-        public IActionResult Register(RegisterViewModel register)
+        public IActionResult Register([FromForm] RegisterViewModel register)
         {
             if (!ModelState.IsValid)
             {
@@ -37,20 +39,21 @@ namespace KitaBizde.web.Controllers
             }
 
             //agar username ya Email gablan mojud bud error bede va view bargardun
-            if (_userService.IsExistUserName(register.UserName) || _userService.IsExistUserEmail(FixedText.FixEmail(register.Email)))
+            if /*(_userService.IsExistUserName(register.UserName) || */(_userService.IsExistUserEmail(FixedText.FixEmail(register.email)))
             {
-                ModelState.AddModelError("UserName", "نام کاربری معتبز نمی باشد");
+                ModelState.AddModelError("Email", "نام کاربری معتبز نمی باشد");
                 return BadRequest();
             }
 
             //AddUserToDataBase
             DataLayer.Entities.User.User user = new User()
             {
-                Email = FixedText.FixEmail(register.Email),
-                Password = PasswordHelper.EncodePasswordMd5(register.Password),
+                PhoneNumber = register.phoneNumber,
+                Email = FixedText.FixEmail(register.email),
+                Password = PasswordHelper.EncodePasswordMd5(register.password),
                 RegisterDate = DateTime.Now,
-                UserAvatar = "Default.jpg",
-                UserName = register.UserName,
+                //UserAvatar = "Default.jpg",
+                //UserName = register.UserName,
             };
             _userService.AddUser(user);
 
@@ -128,8 +131,8 @@ namespace KitaBizde.web.Controllers
                 ModelState.AddModelError("Email", "کاربری یافت نشد !");
                 return BadRequest(ModelState);
             }
-            string bodyEmail = _viewRender.RenderToStringAsync("_ForgotPassword", user);
-            SendEmail.Send(user.Email, "بازیابی حساب کاربری", bodyEmail);
+            //string bodyEmail = _viewRender.RenderToStringAsync("_ForgotPassword", user);
+            //SendEmail.Send(user.Email, "بازیابی حساب کاربری", bodyEmail);
             return Ok();
         }
         #endregion

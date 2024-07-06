@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("KitaBizde.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c2e6d9c1404fe2b3fa796b7361119c9654a6e60")]
 [assembly: System.Reflection.AssemblyProductAttribute("KitaBizde.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("KitaBizde.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

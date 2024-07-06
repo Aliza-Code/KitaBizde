@@ -10,6 +10,9 @@ namespace CodeLearn.Core.DTOs.Book
     {
         public int BookID { get; set; }
         public string Title { get; set; }
+        public string TurkTitle { get; set; }
+        public string AuthorName { get; set; }
+        public string Publisher { get; set; }
         public string ImageName { get; set; }
         
     }

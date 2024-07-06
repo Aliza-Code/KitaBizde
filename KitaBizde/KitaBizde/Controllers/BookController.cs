@@ -10,9 +10,11 @@ namespace KitaBizde.web.Controllers
     public class BookController : ControllerBase
     {
         private IBookService _bookService;
-        public BookController(IBookService bookService)
+        private IOrderService _orderService;
+        public BookController(IBookService bookService, IOrderService orderService)
         {
             _bookService = bookService;
+            _orderService = orderService;
         }
 
         [Route("Search")]
@@ -24,11 +26,24 @@ namespace KitaBizde.web.Controllers
             return Ok(searchedBook);
         }
 
+        [Route("BookGroups")]
+        [HttpGet]
+        public IActionResult BookGroups()
+        {
+            var allGroups=_bookService.GetAllGroups();
+            return Ok(allGroups);
+        }
+
+
         [Route("SelectGroup")]
         [HttpGet]
-        public IActionResult SelectGroup()    //entexabe guruhe marbute
+        public IActionResult SelectGroup(int groupId)    //entexabe guruhe marbute
         {
-            var Groups = _bookService.GetAllGroup().ToList();
+            var Groups = _bookService.SelectGroup(groupId).ToList();
+            if (Groups == null)
+            {
+                return NotFound();
+            }
             return Ok(Groups);
         }
 
@@ -44,6 +59,15 @@ namespace KitaBizde.web.Controllers
                 return NotFound();
             }
             return Ok(book);
+        }
+
+        [Authorize]
+        [Route("BuyCourse/{id}")]
+        [HttpPost]
+        public IActionResult BuyCourse(int id)
+        {
+            int orderId = (int)_orderService.AddOrder(User.Identity.Name, id);
+            return Ok(orderId);
         }
     }
 }

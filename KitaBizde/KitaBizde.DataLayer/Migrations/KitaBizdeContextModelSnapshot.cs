@@ -130,6 +130,16 @@ namespace KitaBizde.DataLayer.Migrations
                     b.Property<DateTime>("PublishDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Publisher")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("SoldCount")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Stars")
+                        .HasColumnType("int");
+
                     b.Property<int>("StockAmount")
                         .HasColumnType("int");
 
@@ -335,6 +345,10 @@ namespace KitaBizde.DataLayer.Migrations
                         .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
+
+                    b.Property<int>("PhoneNumber")
+                        .HasMaxLength(200)
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("RegisterDate")
                         .HasMaxLength(200)

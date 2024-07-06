@@ -82,9 +82,9 @@ namespace KitaBizde.DataLayer.Entities.Book
         public int Isbn { get; set; }
 
         public string? Package { get; set; }
-
-        //public string? BookLevelLevelId { get; set; }
-        //public string? BookLevelLevelId1 { get; set; }
+        public string Publisher { get; set; }
+        public int Stars { get; set; }
+        public int SoldCount { get; set; }
 
         public bool IsDelete { get; set; }
 

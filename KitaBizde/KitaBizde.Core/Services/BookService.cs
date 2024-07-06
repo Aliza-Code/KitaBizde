@@ -1,11 +1,14 @@
 ﻿using CodeLearn.Core.DTOs.Book;
+using KitaBizde.Core.DTOs.Book;
 using KitaBizde.Core.Services.Interfaces;
 using KitaBizde.DataLayer;
 using KitaBizde.DataLayer.Context;
 using KitaBizde.DataLayer.Entities.Book;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,14 +25,19 @@ namespace KitaBizde.Core.Services
             _context = context;
         }
 
-        public int AddBook(Books Book, IFormFile imgBook, IFormFile imgBook2)
+        public int AddBook(/*Books Book, IFormFile imgBook, IFormFile imgBook2*//*[FromForm]*/ BookViewModel Book)
         {
-            throw new NotImplementedException();
+            //Book.PublishDate=DateTime.Now;
+            //Book.BookImageName1 = "no-photo.jpg";
+
+            _context.Add(Book);
+            _context.SaveChanges();
+            return Book.BookId;
         }
 
-        public List<BookGroup> GetAllGroup()
+        public List<BookGroup> SelectGroup(int groupId)
         {
-            return _context.BookGroups.ToList();
+            return _context.BookGroups.Where(b=>b.GroupId==groupId).ToList();
         }
 
         public List<ShowBookListItemViewModel> GetBook(int pageId = 1, string filter = "", string getType = "all",
@@ -65,7 +73,15 @@ namespace KitaBizde.Core.Services
 
         public List<ShowBookForAdminViewModel> GetBookForAdmin()
         {
-            throw new NotImplementedException();
+            return _context.Books.Select(b => new ShowBookForAdminViewModel()
+            {
+                BookID = b.BookId,
+                Title = b.BookTitle,
+                TurkTitle = b.TurkTitle,
+                ImageName = b.BookImageName1,
+                AuthorName = b.Author.AuthorName,
+                Publisher = b.Publisher
+            }).ToList();
         }
 
         public Books GetBookForShow(int bookId)
@@ -111,7 +127,15 @@ namespace KitaBizde.Core.Services
 
         public void UpdateBook(Books Book, IFormFile imgBook, IFormFile imgBook2)
         {
-            throw new NotImplementedException();
+            _context.Books.Update(Book);
+            _context.SaveChanges();
+        }
+
+        public List<BookGroup> GetAllGroups()
+        {
+            var bookGroups = _context.BookGroups.ToList();
+            //var authorGroups = _context.Users.Author.ToList();
+            return bookGroups;
         }
     }
 }

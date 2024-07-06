@@ -1,8 +1,10 @@
+using KitaBizde.Core.Convertors;
 using KitaBizde.Core.Services;
 using KitaBizde.Core.Services.Interfaces;
 using KitaBizde.DataLayer.Context;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,9 +22,16 @@ builder.Services.AddCors(options =>
     var frontendURL = configuration.GetValue<string>("frontend_url");
     options.AddDefaultPolicy(builder =>
     {
-        builder.WithOrigins(frontendURL).AllowAnyMethod().AllowAnyHeader();
+        builder.WithOrigins(frontendURL).AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin();
     });
 });
+
+builder.Services.AddControllersWithViews()
+    .AddNewtonsoftJson(options =>
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft
+    .Json.ReferenceLoopHandling.Ignore)
+    .AddNewtonsoftJson(options => options.SerializerSettings.ContractResolver
+    = new DefaultContractResolver());
 
 //tanzimate ehraze hoviyat
 #region Authentication 
@@ -53,6 +62,7 @@ builder.Services.AddDbContext<KitaBizdeContext>(options =>
 
 builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<IBookService, BookService>();
+builder.Services.AddTransient<IOrderService, OrderService>();
 
 #endregion
 
@@ -68,10 +78,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
+
 
 app.UseCors();
-
+app.UseHttpsRedirection();
 app.UseHttpsRedirection();
 app.UseRouting();
 app.UseAuthorization();
