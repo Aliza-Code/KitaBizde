@@ -19,13 +19,11 @@ namespace KitaBizde.web.Controllers
     {
         
         private IUserService _userService;
-        private IConfiguration _configuration;
 
 
-        public AccountController(IUserService userService ,IConfiguration configuration)
+        public AccountController(IUserService userService )
         {
             _userService = userService;
-            _configuration = configuration;
         }
 
         #region Register
@@ -39,7 +37,7 @@ namespace KitaBizde.web.Controllers
             }
 
             //agar username ya Email gablan mojud bud error bede va view bargardun
-            if /*(_userService.IsExistUserName(register.UserName) || */(_userService.IsExistUserEmail(FixedText.FixEmail(register.email)))
+            if /*(_userService.IsExistUserName(register.UserName) || */(_userService.IsExistUserEmail(FixedText.FixEmail(register.Email)))
             {
                 ModelState.AddModelError("Email", "نام کاربری معتبز نمی باشد");
                 return BadRequest();
@@ -49,8 +47,8 @@ namespace KitaBizde.web.Controllers
             DataLayer.Entities.User.User user = new User()
             {
                 PhoneNumber = register.phoneNumber,
-                Email = FixedText.FixEmail(register.email),
-                Password = PasswordHelper.EncodePasswordMd5(register.password),
+                Email = FixedText.FixEmail(register.Email),
+                Password = PasswordHelper.EncodePasswordMd5(register.Password),
                 RegisterDate = DateTime.Now,
                 //UserAvatar = "Default.jpg",
                 //UserName = register.UserName,

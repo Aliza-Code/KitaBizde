@@ -18,7 +18,7 @@ export default function ProductCard({
     <>
       <div className="h-full w-full shadow-lg bg-gray-50">
         <div className="p-1">
-          <Link to={`/products/${id}`}>
+          <Link to={`/book/showBook/${id}`}>
             <img
               src={image2 ? image2 : image}
               className="max-w[180px] max-h-[190px] mx-auto cursor-pointer rounded-sm"
@@ -48,7 +48,7 @@ export default function ProductCard({
             </p>
 
             {/* Animate sell button */}
-            <Link to={`/products/${id}`}>
+            <Link to={`/book/showBook/${id}`}>
               <div className="flex items-center justify-center bg-sky-400 rounded-sm py-1">
                 <SpotlightButton />
               </div>

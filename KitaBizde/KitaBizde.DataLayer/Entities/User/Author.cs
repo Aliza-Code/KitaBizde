@@ -13,8 +13,8 @@ namespace KitaBizde.DataLayer.Entities.User
         [Key]
         public int AuthorId { get; set; }
 
-        [Display(Name="نام نویسنده")]
-        [Required(ErrorMessage ="لطفا {0} را وارد کنید")]
+        [Display(Name = "نام نویسنده")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         public string AuthorName { get; set; }
 
         [Display(Name = "نام ترکی نویسنده")]

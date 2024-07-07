@@ -23,18 +23,18 @@ namespace KitaBizde.Core.DTOs
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(200, ErrorMessage = "{0}نمیتواند بیشتر از {1} کاراکتر باشد")]
         [EmailAddress(ErrorMessage = "ایمیل وارد شده معتبر نمی باشد")]
-        public string email { get; set; }
+        public string Email { get; set; }
 
         [Display(Name = "کلمه عبور")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(200, ErrorMessage = "{0}نمیتواند بیشتر از {1} کاراکتر باشد")]
-        public string password { get; set; }
+        public string Password { get; set; }
 
         [Display(Name = "تکرار کلمه عبور")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(200, ErrorMessage = "{0}نمیتواند بیشتر از {1} کاراکتر باشد")]
         [Compare("Password", ErrorMessage = "کلمه های عبور مغایرت دارند")]  //baraye mogayese va yeksan budane 2password
-        public string confirmPassword { get; set; }
+        public string RePassword { get; set; }
     }
 
     public class LoginViewModel       //modeli baraye xode xasse Login

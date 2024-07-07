@@ -20,8 +20,8 @@ import {
 import { IoShareSocial } from "react-icons/io5";
 
 export default function Product() {
-  const { productId } = useParams();
-  const targetProd = Books.find((i) => i.id === Number(productId));
+  const { bookId } = useParams();
+  const targetProd = Books.find((i) => i.id === Number(bookId));
 
   const [buyClick, setBuyClick] = useState(false);
   const [capClick, setCapClick] = useState(true);

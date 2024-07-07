@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import signBG from "../img/SignBG.jpg";
-import { IoEyeOutline, IoEyeOffOutline} from "react-icons/io5";
+import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 
 export default function Register() {
   const [values, setValues] = useState({
@@ -81,6 +82,17 @@ export default function Register() {
     } else {
       window.alert("Form validation failed!");
     }
+
+    const data = {
+      phoneNumber: values.phoneNumber,
+      email: values.email,
+      password: values.password,
+      confirmPassword: values.confirmPassword,
+    };
+
+    axios.post("api/Account/Register", data).then((res) => {
+      alert("User created successfully!");
+    });
   };
 
   const handleChange = (e) => {
@@ -125,7 +137,9 @@ export default function Register() {
                 value={values.email}
                 onChange={handleChange}
               ></input>
-              {errors.email && <p className="text-[#f00] text-xs">{errors.email}</p>}
+              {errors.email && (
+                <p className="text-[#f00] text-xs">{errors.email}</p>
+              )}
 
               <input
                 className="p-2 rounded-md w-full outline-none placeholder:text-sm"
@@ -192,7 +206,7 @@ export default function Register() {
             <div className="mt-3 text-xs flex justify-between gap-1 items-center text-sky-900">
               <p>عضو کیتاپ‌بیزده هستید؟</p>
               <Link
-                to={"/login"}
+                to={"/account/login"}
                 className="py-2 px-5 bg-white border rounded-md hover:scale-105 duration-300"
               >
                 ورود

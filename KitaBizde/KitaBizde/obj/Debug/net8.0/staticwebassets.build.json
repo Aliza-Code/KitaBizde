@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "toyEtXwAnIepU/4kHMaYZsAcNzdmHoQaaYMKkKQ6wFs=",
+  "Hash": "Lgl11aeIEyPB4eQhNSjjhQ6Ih601DxPkgPR5KX8yhSc=",
   "Source": "KitaBizde.web",
   "BasePath": "_content/KitaBizde.web",
   "Mode": "Default",
@@ -47,10 +47,10 @@
       "OriginalItemSpec": "C:\\Users\\Huawei\\.nuget\\packages\\microsoft.aspnetcore.components.quickgrid\\8.0.5\\staticwebassets\\QuickGrid.razor.js"
     },
     {
-      "Identity": "C:\\Users\\Huawei\\Documents\\GitHub\\Kitabizde\\KitaBizde\\KitaBizde\\obj\\Debug\\net8.0\\scopedcss\\bundle\\KitaBizde.web.styles.css",
+      "Identity": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\KitaBizde\\KitaBizde\\obj\\Debug\\net8.0\\scopedcss\\bundle\\KitaBizde.web.styles.css",
       "SourceId": "KitaBizde.web",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\Huawei\\Documents\\GitHub\\Kitabizde\\KitaBizde\\KitaBizde\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "ContentRoot": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\KitaBizde\\KitaBizde\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
       "BasePath": "_content/KitaBizde.web",
       "RelativePath": "KitaBizde.web.styles.css",
       "AssetKind": "All",
@@ -63,7 +63,7 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\Huawei\\Documents\\GitHub\\Kitabizde\\KitaBizde\\KitaBizde\\obj\\Debug\\net8.0\\scopedcss\\bundle\\KitaBizde.web.styles.css"
+      "OriginalItemSpec": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\KitaBizde\\KitaBizde\\obj\\Debug\\net8.0\\scopedcss\\bundle\\KitaBizde.web.styles.css"
     }
   ]
 }

@@ -18,13 +18,14 @@ import UserOrders from "./Pages/UserOrders";
 
 const routes = [
   { path: "/", element: <Home></Home> },
-  { path: "/products", element: <Products></Products> },
-  { path: "/products/:productId", element: <Product></Product> },
+  { path: "/book", element: <Products></Products> },
+  { path: "/book/showBook/:bookId", element: <Product></Product> },
   { path: "/contact", element: <Contact></Contact> },
   { path: "/cart", element: <Cart></Cart> },
-  { path: "/login", element: <Login></Login> },
-  { path: "/register", element: <Register></Register> },
-  { path: "/forget", element: <Forget></Forget> },
+  { path: "/account/login", element: <Login></Login> },
+  { path: "/account/register", element: <Register></Register> },
+  { path: "/account/forgetPassword", element: <Forget></Forget> },
+
   { path: "/admin", element: <Admin></Admin> },
   { path: "/admin/books", element: <AdminBooks></AdminBooks> },
   { path: "/admin/books/create", element: <AdminCreateBook></AdminCreateBook> },

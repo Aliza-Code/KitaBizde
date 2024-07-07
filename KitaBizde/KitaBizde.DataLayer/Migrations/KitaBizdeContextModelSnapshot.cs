@@ -45,7 +45,7 @@ namespace KitaBizde.DataLayer.Migrations
 
                     b.HasIndex("ParentId");
 
-                    b.ToTable("BookGroups");
+                    b.ToTable("BookGroups", (string)null);
                 });
 
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.Book.BookLevel", b =>
@@ -63,7 +63,7 @@ namespace KitaBizde.DataLayer.Migrations
 
                     b.HasKey("LevelId");
 
-                    b.ToTable("BookLevels");
+                    b.ToTable("BookLevels", (string)null);
                 });
 
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.Book.Books", b =>
@@ -174,7 +174,7 @@ namespace KitaBizde.DataLayer.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Books");
+                    b.ToTable("Books", (string)null);
                 });
 
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.Order.Order", b =>
@@ -201,7 +201,7 @@ namespace KitaBizde.DataLayer.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Orders", (string)null);
                 });
 
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.Order.OrderDetail", b =>
@@ -230,7 +230,7 @@ namespace KitaBizde.DataLayer.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("OrderDetails");
+                    b.ToTable("OrderDetails", (string)null);
                 });
 
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.Permissions.Permission", b =>
@@ -253,7 +253,7 @@ namespace KitaBizde.DataLayer.Migrations
 
                     b.HasIndex("ParentID");
 
-                    b.ToTable("Permission");
+                    b.ToTable("Permission", (string)null);
                 });
 
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.Permissions.RolePermission", b =>
@@ -276,7 +276,7 @@ namespace KitaBizde.DataLayer.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("RolePermission");
+                    b.ToTable("RolePermission", (string)null);
                 });
 
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.User.Author", b =>
@@ -301,7 +301,7 @@ namespace KitaBizde.DataLayer.Migrations
 
                     b.HasKey("AuthorId");
 
-                    b.ToTable("Author");
+                    b.ToTable("Author", (string)null);
                 });
 
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.User.Role", b =>
@@ -322,7 +322,7 @@ namespace KitaBizde.DataLayer.Migrations
 
                     b.HasKey("RoleId");
 
-                    b.ToTable("Roles");
+                    b.ToTable("Roles", (string)null);
                 });
 
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.User.User", b =>
@@ -365,7 +365,7 @@ namespace KitaBizde.DataLayer.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.User.UserRole", b =>
@@ -388,7 +388,7 @@ namespace KitaBizde.DataLayer.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserRoles");
+                    b.ToTable("UserRoles", (string)null);
                 });
 
             modelBuilder.Entity("KitaBizde.DataLayer.BookGroup", b =>

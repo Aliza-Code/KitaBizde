@@ -152,7 +152,7 @@ export default function Navbar() {
                           </Link>
                         ) : (
                           <Link
-                            to={"/products"}
+                            to={"/book"}
                             className="flex items-center justify-center gap-1"
                           >
                             <MdOutlineProductionQuantityLimits></MdOutlineProductionQuantityLimits>
@@ -188,7 +188,7 @@ export default function Navbar() {
           </div>
 
           <Link
-            to={"/login"}
+            to={"/account/login"}
             className="bg-white h-[35px] px-1.5 rounded-sm mx-1.5 flex items-center justify-center"
           >
             <ion-icon name="person"></ion-icon>
@@ -322,7 +322,7 @@ export default function Navbar() {
                 </ul>
               </li>
 
-              <Link to={"/products"}>
+              <Link to={"/book"}>
                 <a href="#">محصولات</a>
               </Link>
 
