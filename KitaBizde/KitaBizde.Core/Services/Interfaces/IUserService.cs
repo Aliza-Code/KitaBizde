@@ -1,5 +1,6 @@
 ﻿using KitaBizde.Core.DTOs;
 using KitaBizde.DataLayer.Entities.User;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace KitaBizde.Core.Services.Interfaces
     {
         bool IsExistUserName(string userName);   //baraye check kardane vujud ya adame vujude etelaat sabt shode dar database 
         bool IsExistUserEmail(string email);
-        int AddUser(User user);
+        int AddUser([FromForm] User user);
 
         User LoginUser(LoginViewModel login);
 

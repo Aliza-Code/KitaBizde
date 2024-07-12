@@ -25,10 +25,9 @@ namespace KitaBizde.Core.Services
             _context = context;
         }
 
-        public int AddBook(/*Books Book, IFormFile imgBook, IFormFile imgBook2*//*[FromForm]*/ BookViewModel Book)
+        public int AddBook([FromForm] Books Book)
         {
-            //Book.PublishDate=DateTime.Now;
-            //Book.BookImageName1 = "no-photo.jpg";
+            
 
             _context.Add(Book);
             _context.SaveChanges();

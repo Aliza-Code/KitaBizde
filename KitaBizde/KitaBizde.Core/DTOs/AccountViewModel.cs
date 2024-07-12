@@ -12,7 +12,7 @@ namespace KitaBizde.Core.DTOs
         [Display(Name = "موبایل")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(200, ErrorMessage = "{0}نمیتواند بیشتر از {1} کاراکتر باشد")]
-        public Int64 phoneNumber { get; set; }
+        public int phoneNumber { get; set; }
 
         //[Display(Name = "موبایل")]
         //[Required(ErrorMessage = "لطفا {0} را وارد کنید")]

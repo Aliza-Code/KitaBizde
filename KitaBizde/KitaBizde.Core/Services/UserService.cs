@@ -4,6 +4,7 @@ using KitaBizde.Core.Security;
 using KitaBizde.Core.Services.Interfaces;
 using KitaBizde.DataLayer.Context;
 using KitaBizde.DataLayer.Entities.User;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace KitaBizde.Core.Services
             _context = context;
         }
 
-        public int AddUser(User user)
+        public int AddUser([FromForm] User user)
         {
             _context.Users.Add(user);
             _context.SaveChanges();

@@ -3,10 +3,13 @@ using KitaBizde.Core.Services;
 using KitaBizde.Core.Services.Interfaces;
 using KitaBizde.DataLayer.Context;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json.Serialization;
+using System.Configuration;
+
 
 var builder = WebApplication.CreateBuilder(args);
+
 
 // Add services to the container.
 
@@ -14,24 +17,32 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddHttpContextAccessor();
+
 
 var provider = builder.Services.BuildServiceProvider();
 var configuration = provider.GetRequiredService<IConfiguration>();
+
 builder.Services.AddCors(options =>
 {
-    var frontendURL = configuration.GetValue<string>("frontend_url");
-    options.AddDefaultPolicy(builder =>
+    options.AddPolicy("ReactivitesPolicy", policy =>
     {
-        builder.WithOrigins(frontendURL).AllowAnyMethod().AllowAnyHeader().AllowAnyOrigin();
+        policy.AllowAnyMethod()
+        .AllowAnyHeader()
+        .WithOrigins("http://localhost:7257");
     });
 });
 
-builder.Services.AddControllersWithViews()
-    .AddNewtonsoftJson(options =>
-    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft
-    .Json.ReferenceLoopHandling.Ignore)
-    .AddNewtonsoftJson(options => options.SerializerSettings.ContractResolver
-    = new DefaultContractResolver());
+//builder.Services.AddCors(options =>
+//{
+//    var frontendURL = configuration.GetValue<string>("frontend_url");
+//    options.AddDefaultPolicy(builder =>
+//    {
+//        builder.WithOrigins(frontendURL).AllowAnyMethod().AllowAnyHeader()
+//            .WithExposedHeaders(new string[] { "totalAmountOfRecords" });
+//    });
+//});
+
 
 //tanzimate ehraze hoviyat
 #region Authentication 
@@ -80,11 +91,12 @@ app.UseHttpsRedirection();
 
 
 
-app.UseCors();
+app.UseCors("ReactivitesPolicy");
 app.UseHttpsRedirection();
 app.UseHttpsRedirection();
 app.UseRouting();
 app.UseAuthorization();
 app.MapControllers();
+
 
 app.Run();

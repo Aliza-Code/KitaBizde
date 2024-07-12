@@ -28,7 +28,7 @@ namespace KitaBizde.Core.Services.Interfaces
 
         #region Book
         List<ShowBookForAdminViewModel> GetBookForAdmin();
-        int AddBook(/*[FromForm]*/ BookViewModel Book /*, IFormFile imgBook, IFormFile imgBook2*/);
+        int AddBook([FromForm] Books Book /*, IFormFile imgBook, IFormFile imgBook2*/);
         Books GetBookById(int BookId);
         void UpdateBook(Books Book, IFormFile imgBook, IFormFile imgBook2);
 

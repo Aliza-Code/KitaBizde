@@ -10,6 +10,10 @@ using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
 using KitaBizde.Core.Senders;
+using Microsoft.AspNetCore.Authorization;
+using Humanizer.Localisation;
+using KitaBizde.DataLayer.Context;
+using Microsoft.EntityFrameworkCore;
 
 namespace KitaBizde.web.Controllers
 {
@@ -19,14 +23,27 @@ namespace KitaBizde.web.Controllers
     {
         
         private IUserService _userService;
+        private KitaBizdeContext _context;
 
 
-        public AccountController(IUserService userService )
+        public AccountController(IUserService userService ,KitaBizdeContext context)
         {
             _userService = userService;
+            _context = context;
         }
 
+
+        [HttpGet]
+        [Route("GetUsers")]
+        public async Task<ActionResult> Get()
+        {
+            List < User > users= await _context.Users.ToListAsync();
+            return Ok(users);
+        }
+
+
         #region Register
+        [AllowAnonymous]
         [HttpPost]
         [Route("Register")]
         public IActionResult Register([FromForm] RegisterViewModel register)
@@ -55,7 +72,7 @@ namespace KitaBizde.web.Controllers
             };
             _userService.AddUser(user);
 
-            return Ok(new { message = "Registration successful" });
+            return Ok(new { message = "Registration is successful" });
         }
 
 

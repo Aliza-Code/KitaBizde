@@ -90,9 +90,11 @@ export default function Register() {
       confirmPassword: values.confirmPassword,
     };
 
-    axios.post("api/Account/Register", data).then((res) => {
-      alert("User created successfully!");
-    });
+    axios
+      .post("https://localhost:7010/api/Account/Register", data)
+      .then((res) => {
+        alert("User created successfully!");
+      });
   };
 
   const handleChange = (e) => {

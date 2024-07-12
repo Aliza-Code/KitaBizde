@@ -79,7 +79,7 @@ namespace KitaBizde.DataLayer.Entities.Book
         public int Weight { get; set; }
 
         [Required]
-        public int Isbn { get; set; }
+        public Int64 Isbn { get; set; }
 
         public string? Package { get; set; }
         public string Publisher { get; set; }

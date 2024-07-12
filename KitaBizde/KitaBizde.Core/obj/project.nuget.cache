@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BBqJal/Eci7uUkUmFPKIa6H0D0xgUSKHYEYLO83qoPhj/h3sKJNXCQH9J26AAJucyZKOxslm8RaGuT6OZp0aPg==",
+  "dgSpecHash": "3V/nc1Mz/+6Xtci+SD0SMJui0VrPuTNYhqZtk4EbBAM1nY6w65pMx2gW5HM6leTOSe8MM8q+l2+BQCSDgdXj3A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Huawei\\Documents\\GitHub\\Kitabizde\\KitaBizde\\KitaBizde.Core\\KitaBizde.Core.csproj",
+  "projectFilePath": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\KitaBizde\\KitaBizde.Core\\KitaBizde.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Huawei\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Huawei\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

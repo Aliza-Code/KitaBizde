@@ -1,23 +1,28 @@
 ﻿using CodeLearn.Core.DTOs.Book;
 using KitaBizde.Core.DTOs.Book;
 using KitaBizde.Core.Services.Interfaces;
+using KitaBizde.DataLayer.Context;
 using KitaBizde.DataLayer.Entities.Book;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace KitaBizde.web.Areas.AdminPanel.Controllers
 {
     [Route("api/Admin/[controller]")]
     [ApiController]
-    [Authorize]
+    //[Authorize]
+    [Area("AdminPanel")]
     
     public class BookController : ControllerBase
     {
         private IBookService _bookService;
-        public BookController(IBookService bookService)
+        private KitaBizdeContext _context;
+        public BookController(IBookService bookService , KitaBizdeContext context)
         {
             _bookService = bookService;
+            _context = context;
         }
 
         public List<ShowBookForAdminViewModel> ListBook { get; set; }
@@ -35,16 +40,45 @@ namespace KitaBizde.web.Areas.AdminPanel.Controllers
         //public Books book { get; set; }
         [HttpPost]
         [Route("CreateBook")]
-        //[BindProperty]
-        public IActionResult CreateBook(/*Books book,IFormFile imgBookUp1,IFormFile imgBookUp2*/ /*[FromForm]*/ BookViewModel book)
+        public IActionResult CreateBook( Books book)
         {
+            ModelState.Clear();
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            
-            _bookService.AddBook(book);
-            return Ok(book);
+
+            var Book = new Books
+            {
+                GroupId = book.GroupId,
+                SubGroup=book.SubGroup,
+                StockAmount=book.StockAmount,
+                LevelId=book.LevelId,
+                BookDescription=book.BookDescription,
+                FromBook=book.FromBook,
+                BookImageName1=book.BookImageName1,
+                BookPrice=book.BookPrice,
+                Discount=book.Discount,
+                IsDelete=book.IsDelete,
+                PageNumber=book.PageNumber,
+                Package=book.Package,
+                Publisher=book.Publisher,
+                Stars=book.Stars,
+                Isbn=book.Isbn,
+                Material=book.Material,
+                Cover=book.Cover,
+                BookTitle = book.BookTitle,
+                TurkTitle=book.TurkTitle, 
+                AuthorId = book.AuthorId,
+                SoldCount=book.SoldCount,
+                Weight=book.Weight,
+                Tags=book.Tags,
+                PublishDate=DateTime.Now,
+            };
+            //_bookService.AddBook(Book);
+            _context.Add(Book);
+            _context.SaveChanges();
+            return Ok(Book);
         }
 
         #endregion

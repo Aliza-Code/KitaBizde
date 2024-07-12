@@ -15,7 +15,7 @@ namespace KitaBizde.DataLayer.Entities.User
         [Display(Name = "موبایل")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(200, ErrorMessage = "{0}نمیتواند بیشتر از {1} کاراکتر باشد")]
-        public Int64 PhoneNumber { get; set; }
+        public int PhoneNumber { get; set; }
 
         [Display(Name = "نام کاربری")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
