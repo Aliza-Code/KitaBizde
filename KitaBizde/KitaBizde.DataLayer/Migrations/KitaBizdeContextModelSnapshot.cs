@@ -17,7 +17,7 @@ namespace KitaBizde.DataLayer.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.5")
+                .HasAnnotation("ProductVersion", "8.0.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -45,7 +45,7 @@ namespace KitaBizde.DataLayer.Migrations
 
                     b.HasIndex("ParentId");
 
-                    b.ToTable("BookGroups", (string)null);
+                    b.ToTable("BookGroups");
                 });
 
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.Book.BookLevel", b =>
@@ -63,7 +63,7 @@ namespace KitaBizde.DataLayer.Migrations
 
                     b.HasKey("LevelId");
 
-                    b.ToTable("BookLevels", (string)null);
+                    b.ToTable("BookLevels");
                 });
 
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.Book.Books", b =>
@@ -81,10 +81,16 @@ namespace KitaBizde.DataLayer.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("BookGroupGroupId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("BookImageName1")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<string>("BookLevelLevelId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("BookPrice")
                         .HasColumnType("int");
@@ -111,8 +117,8 @@ namespace KitaBizde.DataLayer.Migrations
                     b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
 
-                    b.Property<int>("Isbn")
-                        .HasColumnType("int");
+                    b.Property<long>("Isbn")
+                        .HasColumnType("bigint");
 
                     b.Property<int>("LevelId")
                         .HasColumnType("int");
@@ -137,13 +143,10 @@ namespace KitaBizde.DataLayer.Migrations
                     b.Property<int>("SoldCount")
                         .HasColumnType("int");
 
-                    b.Property<int>("Stars")
-                        .HasColumnType("int");
+                    b.Property<float>("Stars")
+                        .HasColumnType("real");
 
                     b.Property<int>("StockAmount")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("SubGroup")
                         .HasColumnType("int");
 
                     b.Property<string>("Tags")
@@ -164,17 +167,13 @@ namespace KitaBizde.DataLayer.Migrations
 
                     b.HasKey("BookId");
 
-                    b.HasIndex("AuthorId");
-
                     b.HasIndex("GroupId");
 
                     b.HasIndex("LevelId");
 
-                    b.HasIndex("SubGroup");
-
                     b.HasIndex("UserId");
 
-                    b.ToTable("Books", (string)null);
+                    b.ToTable("Books");
                 });
 
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.Order.Order", b =>
@@ -201,7 +200,7 @@ namespace KitaBizde.DataLayer.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.Order.OrderDetail", b =>
@@ -230,7 +229,7 @@ namespace KitaBizde.DataLayer.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("OrderDetails", (string)null);
+                    b.ToTable("OrderDetails");
                 });
 
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.Permissions.Permission", b =>
@@ -253,7 +252,7 @@ namespace KitaBizde.DataLayer.Migrations
 
                     b.HasIndex("ParentID");
 
-                    b.ToTable("Permission", (string)null);
+                    b.ToTable("Permission");
                 });
 
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.Permissions.RolePermission", b =>
@@ -276,32 +275,7 @@ namespace KitaBizde.DataLayer.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.ToTable("RolePermission", (string)null);
-                });
-
-            modelBuilder.Entity("KitaBizde.DataLayer.Entities.User.Author", b =>
-                {
-                    b.Property<int>("AuthorId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AuthorId"));
-
-                    b.Property<string>("AboutAuthor")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AuthorName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("AuthorTurkName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("AuthorId");
-
-                    b.ToTable("Author", (string)null);
+                    b.ToTable("RolePermission");
                 });
 
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.User.Role", b =>
@@ -322,7 +296,7 @@ namespace KitaBizde.DataLayer.Migrations
 
                     b.HasKey("RoleId");
 
-                    b.ToTable("Roles", (string)null);
+                    b.ToTable("Roles");
                 });
 
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.User.User", b =>
@@ -346,9 +320,10 @@ namespace KitaBizde.DataLayer.Migrations
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)");
 
-                    b.Property<int>("PhoneNumber")
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
                         .HasMaxLength(200)
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<DateTime>("RegisterDate")
                         .HasMaxLength(200)
@@ -365,7 +340,7 @@ namespace KitaBizde.DataLayer.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.User.UserRole", b =>
@@ -388,7 +363,7 @@ namespace KitaBizde.DataLayer.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserRoles", (string)null);
+                    b.ToTable("UserRoles");
                 });
 
             modelBuilder.Entity("KitaBizde.DataLayer.BookGroup", b =>
@@ -400,12 +375,6 @@ namespace KitaBizde.DataLayer.Migrations
 
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.Book.Books", b =>
                 {
-                    b.HasOne("KitaBizde.DataLayer.Entities.User.Author", "Author")
-                        .WithMany("Books")
-                        .HasForeignKey("AuthorId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("KitaBizde.DataLayer.BookGroup", "BookGroup")
                         .WithMany("Books")
                         .HasForeignKey("GroupId")
@@ -418,21 +387,13 @@ namespace KitaBizde.DataLayer.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("KitaBizde.DataLayer.BookGroup", "Group")
-                        .WithMany("SubGroup")
-                        .HasForeignKey("SubGroup");
-
                     b.HasOne("KitaBizde.DataLayer.Entities.User.User", null)
                         .WithMany("Books")
                         .HasForeignKey("UserId");
 
-                    b.Navigation("Author");
-
                     b.Navigation("BookGroup");
 
                     b.Navigation("BookLevel");
-
-                    b.Navigation("Group");
                 });
 
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.Order.Order", b =>
@@ -449,7 +410,7 @@ namespace KitaBizde.DataLayer.Migrations
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.Order.OrderDetail", b =>
                 {
                     b.HasOne("KitaBizde.DataLayer.Entities.Book.Books", "Books")
-                        .WithMany("OrderDetails")
+                        .WithMany()
                         .HasForeignKey("BookId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -515,18 +476,11 @@ namespace KitaBizde.DataLayer.Migrations
                     b.Navigation("BookGroups");
 
                     b.Navigation("Books");
-
-                    b.Navigation("SubGroup");
                 });
 
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.Book.BookLevel", b =>
                 {
                     b.Navigation("Books");
-                });
-
-            modelBuilder.Entity("KitaBizde.DataLayer.Entities.Book.Books", b =>
-                {
-                    b.Navigation("OrderDetails");
                 });
 
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.Order.Order", b =>
@@ -539,11 +493,6 @@ namespace KitaBizde.DataLayer.Migrations
                     b.Navigation("Permissions");
 
                     b.Navigation("RolePermissions");
-                });
-
-            modelBuilder.Entity("KitaBizde.DataLayer.Entities.User.Author", b =>
-                {
-                    b.Navigation("Books");
                 });
 
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.User.Role", b =>

@@ -1,15 +1,13 @@
-using KitaBizde.Core.Convertors;
+using Microsoft.EntityFrameworkCore;
+using KitaBizde.web.Controllers;
+using KitaBizde.DataLayer.Entities;
 using KitaBizde.Core.Services;
 using KitaBizde.Core.Services.Interfaces;
 using KitaBizde.DataLayer.Context;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using System.Configuration;
-
+using Microsoft.Extensions.FileProviders;
 
 var builder = WebApplication.CreateBuilder(args);
-
 
 // Add services to the container.
 
@@ -17,34 +15,22 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddHttpContextAccessor();
+
 
 
 var provider = builder.Services.BuildServiceProvider();
 var configuration = provider.GetRequiredService<IConfiguration>();
-
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("ReactivitesPolicy", policy =>
+    var frontendURL = configuration.GetValue<string>("frontend_url");
+    options.AddDefaultPolicy(builder => 
     {
-        policy.AllowAnyMethod()
-        .AllowAnyHeader()
-        .WithOrigins("http://localhost:7257");
+        builder.WithOrigins(frontendURL).AllowAnyMethod().AllowAnyHeader();
     });
 });
 
-//builder.Services.AddCors(options =>
-//{
-//    var frontendURL = configuration.GetValue<string>("frontend_url");
-//    options.AddDefaultPolicy(builder =>
-//    {
-//        builder.WithOrigins(frontendURL).AllowAnyMethod().AllowAnyHeader()
-//            .WithExposedHeaders(new string[] { "totalAmountOfRecords" });
-//    });
-//});
 
 
-//tanzimate ehraze hoviyat
 #region Authentication 
 builder.Services.AddAuthentication(option =>
 {
@@ -89,14 +75,10 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseCors();
 
-
-app.UseCors("ReactivitesPolicy");
-app.UseHttpsRedirection();
-app.UseHttpsRedirection();
-app.UseRouting();
 app.UseAuthorization();
-app.MapControllers();
 
+app.MapControllers();
 
 app.Run();

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "kCTnL5a5kdgV4yaJQ6EbBDXoCKHCFB3/gk/WZ4ABJ3faEF9vdHbRkTsABXBu5FM7nDBqnhoWOrMqYci6FNy+fw==",
+  "dgSpecHash": "rhoYF/1XoCFQzJXkWT2lFsiCBPSly2XF3j7+ywVLK6FnpW7oeSOL2kAnoqqwlaa2irkxexkH4EFdJIReqL3jvA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\KitaBizde\\KitaBizde.DataLayer\\KitaBizde.DataLayer.csproj",
+  "projectFilePath": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\Test-Final\\TestFinalAPI\\KitaBizde.DataLayer\\KitaBizde.DataLayer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Huawei\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Huawei\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

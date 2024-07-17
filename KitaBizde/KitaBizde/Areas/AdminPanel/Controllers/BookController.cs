@@ -51,7 +51,8 @@ namespace KitaBizde.web.Areas.AdminPanel.Controllers
             var Book = new Books
             {
                 GroupId = book.GroupId,
-                SubGroup=book.SubGroup,
+                
+                
                 StockAmount=book.StockAmount,
                 LevelId=book.LevelId,
                 BookDescription=book.BookDescription,

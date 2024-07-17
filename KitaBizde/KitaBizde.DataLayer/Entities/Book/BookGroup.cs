@@ -31,11 +31,11 @@ namespace KitaBizde.DataLayer
         [ForeignKey("ParentId")]
         public List<BookGroup> BookGroups { get; set; }
 
-        [InverseProperty("BookGroup")]
+        //[InverseProperty("BookGroup")]
         public List<Books> Books { get; set; }
 
-        [InverseProperty("Group")]
-        public List<Books> SubGroup { get; set; }
+        //[InverseProperty("Group")]
+        //public List<Books> SubGroup { get; set; }
 
         #endregion
     }

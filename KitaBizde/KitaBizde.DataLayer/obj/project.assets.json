@@ -4111,11 +4111,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\KitaBizde\\KitaBizde.DataLayer\\KitaBizde.DataLayer.csproj",
+      "projectUniqueName": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\Test-Final\\TestFinalAPI\\KitaBizde.DataLayer\\KitaBizde.DataLayer.csproj",
       "projectName": "KitaBizde.DataLayer",
-      "projectPath": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\KitaBizde\\KitaBizde.DataLayer\\KitaBizde.DataLayer.csproj",
+      "projectPath": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\Test-Final\\TestFinalAPI\\KitaBizde.DataLayer\\KitaBizde.DataLayer.csproj",
       "packagesPath": "C:\\Users\\Huawei\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\KitaBizde\\KitaBizde.DataLayer\\obj\\",
+      "outputPath": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\Test-Final\\TestFinalAPI\\KitaBizde.DataLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Huawei\\AppData\\Roaming\\NuGet\\NuGet.Config",

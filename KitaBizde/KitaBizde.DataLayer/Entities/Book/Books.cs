@@ -17,7 +17,7 @@ namespace KitaBizde.DataLayer.Entities.Book
         [Required]
         public int GroupId { get; set; }
 
-        public int? SubGroup { get; set; }
+        //public int? SubGroup { get; set; }
 
         [Required]
         public int AuthorId { get; set; }
@@ -79,34 +79,38 @@ namespace KitaBizde.DataLayer.Entities.Book
         public int Weight { get; set; }
 
         [Required]
-        public Int64 Isbn { get; set; }
+        public Int64 Isbn { get; set; } 
 
         public string? Package { get; set; }
         public string Publisher { get; set; }
-        public int Stars { get; set; }
+        public float Stars { get; set; }
         public int SoldCount { get; set; }
 
         public bool IsDelete { get; set; }
 
-
-
+        public string? BookGroupGroupId { get; set; }
+        public string? BookLevelLevelId { get; set; }
 
 
         #region Relations
 
         [ForeignKey("AuthorId")]
-        public User.Author Author { get; set; }
+        [NotMapped]
+        public User.Author? Author { get; set; }
 
         [ForeignKey("GroupId")]
-        public BookGroup BookGroup { get; set; }
+        public BookGroup? BookGroup { get; set; }
 
-        [ForeignKey("SubGroup")]
-        public BookGroup Group { get; set; }
+        //[NotMapped]
+        //[ForeignKey("SubGroup")]
+        //public BookGroup Group { get; set; }
 
+        
         [ForeignKey("LevelId")]
-        public BookLevel BookLevel { get; set; }
+        public BookLevel? BookLevel { get; set; }
 
-        public List<Order.OrderDetail> OrderDetails { get; set; }
+        [NotMapped]
+        public List<Order.OrderDetail>? OrderDetails { get; set; }
         #endregion
     }
 }

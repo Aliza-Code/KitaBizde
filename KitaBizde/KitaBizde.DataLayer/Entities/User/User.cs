@@ -12,10 +12,11 @@ namespace KitaBizde.DataLayer.Entities.User
         [Key]
         public int UserId { get; set; }
 
+        [Phone]
         [Display(Name = "موبایل")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(200, ErrorMessage = "{0}نمیتواند بیشتر از {1} کاراکتر باشد")]
-        public int PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
 
         [Display(Name = "نام کاربری")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]

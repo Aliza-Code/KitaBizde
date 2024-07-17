@@ -1,4 +1,4 @@
-@KitaBizde_HostAddress = http://localhost:5241
+@KitaBizde_HostAddress = http://localhost:5161
 
 GET {{KitaBizde_HostAddress}}/weatherforecast/
 Accept: application/json

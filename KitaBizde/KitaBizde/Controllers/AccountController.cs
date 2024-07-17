@@ -11,7 +11,7 @@ using System.Security.Claims;
 
 using KitaBizde.Core.Senders;
 using Microsoft.AspNetCore.Authorization;
-using Humanizer.Localisation;
+//using Humanizer.Localisation;
 using KitaBizde.DataLayer.Context;
 using Microsoft.EntityFrameworkCore;
 
@@ -67,8 +67,8 @@ namespace KitaBizde.web.Controllers
                 Email = FixedText.FixEmail(register.Email),
                 Password = PasswordHelper.EncodePasswordMd5(register.Password),
                 RegisterDate = DateTime.Now,
-                //UserAvatar = "Default.jpg",
-                //UserName = register.UserName,
+                UserAvatar = "Default.jpg",
+                UserName = register.phoneNumber.ToString(),
             };
             _userService.AddUser(user);
 
