@@ -1,5 +1,4 @@
-﻿using CodeLearn.Core.DTOs.Book;
-using KitaBizde.Core.DTOs.Book;
+﻿using KitaBizde.Core.DTOs.Book;
 using KitaBizde.Core.Services.Interfaces;
 using KitaBizde.DataLayer;
 using KitaBizde.DataLayer.Context;
@@ -12,6 +11,7 @@ using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,10 +25,8 @@ namespace KitaBizde.Core.Services
             _context = context;
         }
 
-        public int AddBook([FromForm] Books Book)
+        public int AddBook(Books Book)
         {
-            
-
             _context.Add(Book);
             _context.SaveChanges();
             return Book.BookId;
@@ -65,9 +63,9 @@ namespace KitaBizde.Core.Services
             return PaginatedBooks;
         }
 
-        public Books GetBookById(int BookId)
+        public Books GetBookById(int bookId)
         {
-            throw new NotImplementedException();
+            return _context.Books.FirstOrDefault(b => b.BookId == bookId);
         }
 
         public List<ShowBookForAdminViewModel> GetBookForAdmin()
@@ -124,7 +122,7 @@ namespace KitaBizde.Core.Services
             throw new NotImplementedException();
         }
 
-        public void UpdateBook(Books Book, IFormFile imgBook, IFormFile imgBook2)
+        public void UpdateBook(Books Book  /*, IFormFile imgBook, IFormFile imgBook2*/)
         {
             _context.Books.Update(Book);
             _context.SaveChanges();

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CodeLearn.Core.DTOs.Book
+namespace KitaBizde.Core.DTOs.Book
 {
     public class ShowBookListItemViewModel
     {

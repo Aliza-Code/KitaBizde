@@ -53,9 +53,9 @@ namespace KitaBizde.Core.Services
             return _context.Users.Any(u => u.Email == email);
         }
 
-        public bool IsExistUserName(string userName)
+        public bool IsExistUserName(string phoneNum)
         {
-            return _context.Users.Any(u => u.UserName == userName);
+            return _context.Users.Any(u => u.PhoneNumber == phoneNum);
         }
 
         public User LoginUser(LoginViewModel login)

@@ -35,7 +35,7 @@ namespace KitaBizde.Core.DTOs
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(200, ErrorMessage = "{0}نمیتواند بیشتر از {1} کاراکتر باشد")]
         [Compare("Password", ErrorMessage = "کلمه های عبور مغایرت دارند")]  //baraye mogayese va yeksan budane 2password
-        public string RePassword { get; set; }
+        public string confirmPassword { get; set; }
     }
 
     public class LoginViewModel       //modeli baraye xode xasse Login

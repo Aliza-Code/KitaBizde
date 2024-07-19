@@ -1,5 +1,4 @@
-﻿using CodeLearn.Core.DTOs.Book;
-using KitaBizde.Core.DTOs.Book;
+﻿using KitaBizde.Core.DTOs.Book;
 using KitaBizde.DataLayer;
 using KitaBizde.DataLayer.Entities.Book;
 using Microsoft.AspNetCore.Http;
@@ -30,7 +29,7 @@ namespace KitaBizde.Core.Services.Interfaces
         List<ShowBookForAdminViewModel> GetBookForAdmin();
         int AddBook([FromForm] Books Book /*, IFormFile imgBook, IFormFile imgBook2*/);
         Books GetBookById(int BookId);
-        void UpdateBook(Books Book, IFormFile imgBook, IFormFile imgBook2);
+        void UpdateBook(Books Book  /*, IFormFile imgBook, IFormFile imgBook2*/);
 
         List<ShowBookListItemViewModel> GetBook(int pageId = 1, string filter = "", string getType = "all",
             string orderByType = "date", List<int> selectedGroups = null, int take = 0);

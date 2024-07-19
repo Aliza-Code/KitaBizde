@@ -43,10 +43,10 @@ namespace KitaBizde.web.Controllers
 
 
         #region Register
-        [AllowAnonymous]
+        
         [HttpPost]
         [Route("Register")]
-        public IActionResult Register([FromForm] RegisterViewModel register)
+        public IActionResult Register(RegisterViewModel register)
         {
             if (!ModelState.IsValid)
             {
@@ -54,7 +54,7 @@ namespace KitaBizde.web.Controllers
             }
 
             //agar username ya Email gablan mojud bud error bede va view bargardun
-            if /*(_userService.IsExistUserName(register.UserName) || */(_userService.IsExistUserEmail(FixedText.FixEmail(register.Email)))
+            if (_userService.IsExistUserName(register.phoneNumber) || (_userService.IsExistUserEmail(FixedText.FixEmail(register.Email))))
             {
                 ModelState.AddModelError("Email", "نام کاربری معتبز نمی باشد");
                 return BadRequest();
@@ -82,7 +82,6 @@ namespace KitaBizde.web.Controllers
 
         [HttpPost]
         [Route("Login")]
-
         public IActionResult Login(LoginViewModel login)
         {
             if (!ModelState.IsValid)
