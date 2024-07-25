@@ -1,8 +1,10 @@
 ﻿using KitaBizde.Core.Convertors;
 using KitaBizde.Core.DTOs;
+using KitaBizde.Core.DTOs.Users;
 using KitaBizde.Core.Security;
 using KitaBizde.Core.Services.Interfaces;
 using KitaBizde.DataLayer.Context;
+using KitaBizde.DataLayer.Entities.Book;
 using KitaBizde.DataLayer.Entities.User;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -28,6 +30,13 @@ namespace KitaBizde.Core.Services
             return user.UserId;
         }
 
+        public void DeleteUser(int userId)
+        {
+            User user = GetUserByUserId(userId);
+            user.IsDelete = true;
+            UpdateUser(user);
+        }
+
         public User GetUserByEmail(string email)
         {
             return _context.Users.SingleOrDefault(u => u.Email == email);
@@ -46,6 +55,31 @@ namespace KitaBizde.Core.Services
         public int GetUserIdByUserName(string userName)
         {
             return _context.Users.Single(u => u.UserName == userName).UserId;
+        }
+
+        public UserForAdminViewModel GetUsers(int pageId = 1, string filterEmail = "", string filterUserName = "")
+        {
+            IQueryable<User> result = _context.Users;
+
+            if (!string.IsNullOrEmpty(filterEmail))
+            {
+                result = result.Where(u => u.Email.Contains(filterEmail));
+            }
+            if (!string.IsNullOrEmpty(filterUserName))
+            {
+                result = result.Where(u => u.UserName.Contains(filterUserName));
+            }
+
+            //show Item in Page
+            int take = 10;
+            int skip = (pageId - 1) * take;
+
+            UserForAdminViewModel list = new UserForAdminViewModel();
+            list.CorrentPage = pageId;
+            list.PageCounte = result.Count() / take;
+            list.Users = result.OrderBy(u => u.RegisterDate).Skip(skip).Take(take).ToList();
+
+            return list;
         }
 
         public bool IsExistUserEmail(string email)
@@ -70,5 +104,19 @@ namespace KitaBizde.Core.Services
             _context.Users.Update(user);
             _context.SaveChanges();
         }
+
+        public EditUserViewModel GetUserForShowInEditMode(int userId)
+        {
+            return _context.Users.Where(u => u.UserId == userId)
+                .Select(u => new EditUserViewModel()
+                {
+                    PhoneNum=u.PhoneNumber,
+                    UserId = u.UserId,
+                    //AvatarName = u.UserAvatar,
+                    Email = u.Email,
+                    UserName = u.UserName,
+                }).Single();
+        }
+
     }
 }

@@ -26,15 +26,16 @@ namespace KitaBizde.Core.Services.Interfaces
         #endregion
 
         #region Book
-        List<ShowBookForAdminViewModel> GetBookForAdmin();
-        int AddBook([FromForm] Books Book /*, IFormFile imgBook, IFormFile imgBook2*/);
+        List<ShowBookForAdminViewModel> GetBookForAdmin(int pageId = 1, string filterTitle = "", string filterAuthor = "");
+        int AddBookFromAdmin([FromForm] CreateBookViewModel book /*, IFormFile imgBook, IFormFile imgBook2*/);
         Books GetBookById(int BookId);
-        void UpdateBook(Books Book  /*, IFormFile imgBook, IFormFile imgBook2*/);
+        void UpdateBookFromAdmin(EditBookViewModel editBook  /*, IFormFile imgBook, IFormFile imgBook2*/);
 
         List<ShowBookListItemViewModel> GetBook(int pageId = 1, string filter = "", string getType = "all",
             string orderByType = "date", List<int> selectedGroups = null, int take = 0);
 
         Books GetBookForShow(int bookId);
+        void DeleteBook(int userId);
         #endregion
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,7 +38,6 @@ namespace KitaBizde.DataLayer.Entities.User
         public string UserAvatar { get; set; }
 
         [Display(Name = "تاریخ ثبت نام")]
-        [MaxLength(200, ErrorMessage = "{0}نمیتواند بیشتر از {1} کاراکتر باشد")]
         public DateTime RegisterDate { get; set; }
 
         public bool IsDelete { get; set; }
@@ -46,12 +46,16 @@ namespace KitaBizde.DataLayer.Entities.User
 
         #region Relations
 
-        public virtual List<Book.Books> Books { get; set; }
-        public virtual List<UserRole> UserRoles { get; set; }
+        [NotMapped]
+        public virtual List<Book.Books>? Books { get; set; }
+
+        [NotMapped]
+        public virtual List<UserRole>? UserRoles { get; set; }
 
         //public virtual List<Wallet.Wallet> Wallets { get; set; }
 
-        public virtual List<Order.Order> Orders { get; set; }
+        [NotMapped]
+        public virtual List<Order.Order>? Orders { get; set; }
 
         #endregion
     }

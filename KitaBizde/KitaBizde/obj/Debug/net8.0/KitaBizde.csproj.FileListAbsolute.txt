@@ -3,10 +3,10 @@ C:\Users\Huawei\CS-projects\Asp.NetCoreAdvance\Test-Final\TestFinalAPI\KitaBizde
 C:\Users\Huawei\CS-projects\Asp.NetCoreAdvance\Test-Final\TestFinalAPI\KitaBizde\obj\Debug\net8.0\KitaBizde.AssemblyInfoInputs.cache
 C:\Users\Huawei\CS-projects\Asp.NetCoreAdvance\Test-Final\TestFinalAPI\KitaBizde\obj\Debug\net8.0\KitaBizde.AssemblyInfo.cs
 C:\Users\Huawei\CS-projects\Asp.NetCoreAdvance\Test-Final\TestFinalAPI\KitaBizde\obj\Debug\net8.0\KitaBizde.csproj.CoreCompileInputs.cache
-C:\Users\Huawei\CS-projects\Asp.NetCoreAdvance\Test-Final\TestFinalAPI\KitaBizde\obj\Debug\net8.0\KitaBizde.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\Huawei\CS-projects\Asp.NetCoreAdvance\Test-Final\TestFinalAPI\KitaBizde\obj\Debug\net8.0\KitaBizde.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\Huawei\CS-projects\Asp.NetCoreAdvance\Test-Final\TestFinalAPI\KitaBizde\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Huawei\CS-projects\Asp.NetCoreAdvance\Test-Final\TestFinalAPI\KitaBizde\bin\Debug\net8.0\appsettings.json
+C:\Users\Huawei\CS-projects\Asp.NetCoreAdvance\Test-Final\TestFinalAPI\KitaBizde\bin\Debug\net8.0\KitaBizde.staticwebassets.runtime.json
 C:\Users\Huawei\CS-projects\Asp.NetCoreAdvance\Test-Final\TestFinalAPI\KitaBizde\bin\Debug\net8.0\KitaBizde.exe
 C:\Users\Huawei\CS-projects\Asp.NetCoreAdvance\Test-Final\TestFinalAPI\KitaBizde\bin\Debug\net8.0\KitaBizde.deps.json
 C:\Users\Huawei\CS-projects\Asp.NetCoreAdvance\Test-Final\TestFinalAPI\KitaBizde\bin\Debug\net8.0\KitaBizde.runtimeconfig.json

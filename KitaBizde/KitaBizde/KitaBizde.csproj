@@ -22,4 +22,10 @@
     <ProjectReference Include="..\KitaBizde.DataLayer\KitaBizde.DataLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+    <Folder Include="wwwroot\bookImages\" />
+    <Folder Include="wwwroot\UserAvatars\" />
+  </ItemGroup>
+
 </Project>

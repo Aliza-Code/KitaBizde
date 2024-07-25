@@ -1,4 +1,5 @@
 ﻿using KitaBizde.Core.DTOs;
+using KitaBizde.Core.DTOs.Users;
 using KitaBizde.DataLayer.Entities.User;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -22,5 +23,9 @@ namespace KitaBizde.Core.Services.Interfaces
         User GetUserByUserName(string userName);
         int GetUserIdByUserName(string userName);
         void UpdateUser(User user);
+
+        UserForAdminViewModel GetUsers(int pageId = 1, string filterEmail = "", string filterUserName = "");
+        void DeleteUser(int userId);
+        public EditUserViewModel GetUserForShowInEditMode(int userId);
     }
 }

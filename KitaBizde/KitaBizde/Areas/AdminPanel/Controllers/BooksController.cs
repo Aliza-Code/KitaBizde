@@ -2,6 +2,7 @@
 using KitaBizde.Core.Services.Interfaces;
 using KitaBizde.DataLayer.Context;
 using KitaBizde.DataLayer.Entities.Book;
+using KitaBizde.DataLayer.Entities.User;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -27,9 +28,9 @@ namespace KitaBizde.web.Areas.AdminPanel.Controllers
 
         public List<ShowBookForAdminViewModel> ListBook { get; set; }
         [HttpGet]
-        public ActionResult GetBooksForAdmin()
+        public ActionResult GetBooksForAdmin(int pageId = 1, string BookName = "", string AuthorName = "")
         {
-            ListBook=_bookService.GetBookForAdmin();
+            ListBook = _bookService.GetBookForAdmin(pageId, BookName, AuthorName);
             return Ok(ListBook);
         }
 
@@ -37,27 +38,25 @@ namespace KitaBizde.web.Areas.AdminPanel.Controllers
         #region CreateBook  //moshkele gereftane etelaat az form
         [HttpPost]
         [Route("Create")]
-        public IActionResult CreateBook(Books book)
+        public IActionResult CreateBook(CreateBookViewModel book)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            var Book= book;
-            book.PublishDate = DateTime.Now;
-            _bookService.AddBook(Book);
-            return Ok(Book);
+            
+            //book.PublishDate = DateTime.Now;
+            _bookService.AddBookFromAdmin(book);
+            return Ok(book);
         }
         #endregion
 
         #region EditBook
-        //public Books editBook { get; set; }
         [HttpPut]
         [Route("Edit/{id}")]
-        public IActionResult EditBook(int id,Books book)
+        public IActionResult EditBook(int id,EditBookViewModel book)
         {
-            var editBook = _bookService.GetBookById(id);
-            if (editBook == null)
+            if (book == null)
             {
                 return NotFound();
             }
@@ -65,32 +64,26 @@ namespace KitaBizde.web.Areas.AdminPanel.Controllers
             {
                 return BadRequest(ModelState);
             }
-            editBook.BookTitle = book.BookTitle;
-            editBook.GroupId = book.GroupId;
-                editBook.StockAmount = book.StockAmount;
-                editBook.LevelId = book.LevelId;
-                editBook.BookDescription = book.BookDescription;
-                editBook.FromBook = book.FromBook;
-                editBook.BookImageName1 = book.BookImageName1;
-                editBook.BookPrice = book.BookPrice;
-                editBook.Discount = book.Discount;
-                editBook.IsDelete = book.IsDelete;
-                editBook.PageNumber = book.PageNumber;
-                editBook.Package = book.Package;
-                editBook.Publisher = book.Publisher;
-                editBook.Stars = book.Stars;
-                editBook.Isbn = book.Isbn;
-                editBook.Material = book.Material;
-                editBook.Cover = book.Cover;
-                editBook.BookTitle = book.BookTitle;
-                editBook.TurkTitle = book.TurkTitle; 
-                editBook.AuthorId = book.AuthorId;
-                editBook.SoldCount = book.SoldCount;
-                editBook.Weight = book.Weight;
-                editBook.Tags = book.Tags;
+            try
+            {
+                _bookService.UpdateBookFromAdmin(book);
+                return Ok(); // Return success response
+            }
+            catch (Exception ex)
+            {
+                // Log the exception
+                return StatusCode(500, "Internal server error: " + ex.Message);
+            }
+        }
+        #endregion
 
-            _bookService.UpdateBook(editBook);
-            return Ok(editBook);
+        #region DeleteBook
+        [HttpPost]
+        [Route("Delete/{id}")]
+        public IActionResult DeleteBook(int id)
+        {
+            _bookService.DeleteBook(id);
+            return Ok(new { message = "Delete is successful" });
         }
         #endregion
     }

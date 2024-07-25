@@ -1,8 +1,11 @@
-﻿using KitaBizde.Core.DTOs.Book;
+﻿using KitaBizde.Core.Convertors;
+using KitaBizde.Core.DTOs.Book;
+using KitaBizde.Core.Security;
 using KitaBizde.Core.Services.Interfaces;
 using KitaBizde.DataLayer;
 using KitaBizde.DataLayer.Context;
 using KitaBizde.DataLayer.Entities.Book;
+using KitaBizde.DataLayer.Entities.User;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -25,11 +28,45 @@ namespace KitaBizde.Core.Services
             _context = context;
         }
 
-        public int AddBook(Books Book)
+        public int AddBookFromAdmin(CreateBookViewModel book)
         {
-            _context.Add(Book);
+            Books createBook = new Books(); 
+            createBook.BookTitle=book.BookTitle;
+            createBook.TurkTitle=book.TurkTitle;
+            createBook.AuthorId=book.AuthorId;
+            createBook.Cover=book.Cover;
+            createBook.Material=book.Material;
+            createBook.Package=book.Package;
+            createBook.FromBook=book.FromBook;
+            createBook.BookDescription=book.BookDescription;
+            createBook.GroupId = book.GroupId;
+            createBook.LevelId=book.LevelId;
+            createBook.PageNumber=book.PageNumber;
+            createBook.BookPrice=book.BookPrice;
+            createBook.Discount=book.Discount;
+            createBook.Isbn=book.Isbn;
+            createBook.PublishDate = DateTime.Now;
+            createBook.SoldCount=book.SoldCount;
+            createBook.Publisher=book.Publisher;
+            createBook.Weight=book.Weight;
+            createBook.StockAmount=book.StockAmount;
+            createBook.Stars=book.Stars;
+            createBook.PageNumber= book.PageNumber;
+            createBook.Tags=book.Tags;
+
+            if (book.BookImage != null)
+            {
+                string imagePath = "";
+                createBook.BookImageName1 = NameGenerator.GeneratorUniqCode() + Path.GetExtension(book.BookImage.FileName);
+                imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/bookImages", createBook.BookImageName1);
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    book.BookImage.CopyTo(stream);
+                }
+            }
+            _context.Add(createBook);
             _context.SaveChanges();
-            return Book.BookId;
+            return createBook.BookId;
         }
 
         public List<BookGroup> SelectGroup(int groupId)
@@ -52,8 +89,8 @@ namespace KitaBizde.Core.Services
             var books=result.Select(b=>new ShowBookListItemViewModel()
             {
                 BookId = b.BookId,
-                ImageName1=b.BookImageName1,
-                ImageName2=b.BookImageName1,
+                ImageName1=b.BookImageName1.ToString(),
+                ImageName2=b.BookImageName1.ToString(),
                 Price=b.BookPrice,
                 Title=b.BookTitle,
                 TurkTitle=b.TurkTitle
@@ -68,17 +105,28 @@ namespace KitaBizde.Core.Services
             return _context.Books.FirstOrDefault(b => b.BookId == bookId);
         }
 
-        public List<ShowBookForAdminViewModel> GetBookForAdmin()
+        public List<ShowBookForAdminViewModel> GetBookForAdmin(int pageId = 1, string filterTitle = "", string filterAuthor = "")
         {
-            return _context.Books.Select(b => new ShowBookForAdminViewModel()
+            var query = _context.Books.Select(b => new ShowBookForAdminViewModel()
             {
                 BookID = b.BookId,
                 Title = b.BookTitle,
                 TurkTitle = b.TurkTitle,
-                ImageName = b.BookImageName1,
+                ImageName = b.BookImageName1.ToString(),
                 AuthorName = b.Author.AuthorName,
                 Publisher = b.Publisher
-            }).ToList();
+            });
+
+            if (!string.IsNullOrEmpty(filterTitle))
+            {
+                query = query.Where(b => b.Title.Contains(filterTitle));
+            }
+            if (!string.IsNullOrEmpty(filterAuthor))
+            {
+                query = query.Where(b => b.AuthorName.Contains(filterAuthor));
+            }
+
+            return query.ToList();
         }
 
         public Books GetBookForShow(int bookId)
@@ -122,9 +170,55 @@ namespace KitaBizde.Core.Services
             throw new NotImplementedException();
         }
 
-        public void UpdateBook(Books Book  /*, IFormFile imgBook, IFormFile imgBook2*/)
+        public void UpdateBookFromAdmin(EditBookViewModel editBook)
         {
-            _context.Books.Update(Book);
+            Books book = GetBookById(editBook.BookId);
+
+            book.BookTitle = editBook.BookTitle;
+            book.GroupId = editBook.GroupId;
+            book.StockAmount = editBook.StockAmount;
+            book.LevelId = editBook.LevelId;
+            book.BookDescription = editBook.BookDescription;
+            book.FromBook = editBook.FromBook;
+            book.BookPrice = editBook.BookPrice;
+            book.Discount = editBook.Discount;
+            book.IsDelete = editBook.IsDelete;
+            book.PageNumber = editBook.PageNumber;
+            book.Package = editBook.Package;
+            book.Publisher = editBook.Publisher;
+            book.Stars = editBook.Stars;
+            book.Isbn = editBook.Isbn;
+            book.Material = editBook.Material;
+            book.Cover = editBook.Cover;
+            book.BookTitle = editBook.BookTitle;
+            book.TurkTitle = editBook.TurkTitle;
+            book.AuthorId = editBook.AuthorId;
+            book.SoldCount = editBook.SoldCount;
+            book.Weight = editBook.Weight;
+            book.Tags = editBook.Tags;
+
+            if (editBook.BookImage != null)
+            {
+                //delete old image
+                //if (editBook.AvatarName != "Default.jpg")
+                //{
+                //    string deletePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/UserAvatar", editUser.AvatarName);
+                //    if (File.Exists(deletePath))
+                //    {
+                //        File.Delete(deletePath);
+                //    }
+                //}
+
+                #region Uploading new AvatarImage
+                book.BookImageName1 = NameGenerator.GeneratorUniqCode() + Path.GetExtension(editBook.BookImage.FileName);
+                string imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/bookImages", book.BookImageName1);
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    editBook.BookImage.CopyTo(stream);
+                }
+                #endregion
+            }
+            _context.Books.Update(book);
             _context.SaveChanges();
         }
 
@@ -134,5 +228,14 @@ namespace KitaBizde.Core.Services
             //var authorGroups = _context.Users.Author.ToList();
             return bookGroups;
         }
+
+        public void DeleteBook(int bookId)
+        {
+            Books book = GetBookById(bookId);
+            book.IsDelete = true;
+            _context.Books.Update(book);
+            _context.SaveChanges();
+        }
+
     }
 }

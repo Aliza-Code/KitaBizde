@@ -1,0 +1,61 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\Test-Final\\TestFinalAPI\\KitaBizde\\wwwroot\\UserAvatars\\007963b1634e4b6b84aaf96b3b9fdb7f.JPG",
+      "PackagePath": "staticwebassets\\UserAvatars\\007963b1634e4b6b84aaf96b3b9fdb7f.JPG"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\Test-Final\\TestFinalAPI\\KitaBizde\\wwwroot\\UserAvatars\\1a1dd398341e44cc9c9acfb5abf49561.JPG",
+      "PackagePath": "staticwebassets\\UserAvatars\\1a1dd398341e44cc9c9acfb5abf49561.JPG"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\Test-Final\\TestFinalAPI\\KitaBizde\\wwwroot\\UserAvatars\\4c7ebad979194db7944bb84db81401aa.JPG",
+      "PackagePath": "staticwebassets\\UserAvatars\\4c7ebad979194db7944bb84db81401aa.JPG"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\Test-Final\\TestFinalAPI\\KitaBizde\\wwwroot\\UserAvatars\\8c18048a353b45f5bba8aa6398b671cb.JPG",
+      "PackagePath": "staticwebassets\\UserAvatars\\8c18048a353b45f5bba8aa6398b671cb.JPG"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\Test-Final\\TestFinalAPI\\KitaBizde\\wwwroot\\UserAvatars\\dbb725dcf34749258868ecebf5a30d96.JPG",
+      "PackagePath": "staticwebassets\\UserAvatars\\dbb725dcf34749258868ecebf5a30d96.JPG"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\Test-Final\\TestFinalAPI\\KitaBizde\\wwwroot\\bookImages\\82f5058415f34f6593d1c32c0487a146.png",
+      "PackagePath": "staticwebassets\\bookImages\\82f5058415f34f6593d1c32c0487a146.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\Test-Final\\TestFinalAPI\\KitaBizde\\wwwroot\\bookImages\\9d90537434d947e59fc7f37f38a0ef93.png",
+      "PackagePath": "staticwebassets\\bookImages\\9d90537434d947e59fc7f37f38a0ef93.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\Test-Final\\TestFinalAPI\\KitaBizde\\wwwroot\\bookImages\\b92f25b2c9a74823b1e1a8b882eace9d.png",
+      "PackagePath": "staticwebassets\\bookImages\\b92f25b2c9a74823b1e1a8b882eace9d.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\Test-Final\\TestFinalAPI\\KitaBizde\\wwwroot\\bookImages\\e22e878e90b943a586248cb5133788a4.png",
+      "PackagePath": "staticwebassets\\bookImages\\e22e878e90b943a586248cb5133788a4.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\Test-Final\\TestFinalAPI\\KitaBizde\\wwwroot\\bookImages\\f38d00ca403c405d85ba80c650f81072.png",
+      "PackagePath": "staticwebassets\\bookImages\\f38d00ca403c405d85ba80c650f81072.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.KitaBizde.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.KitaBizde.props",
+      "PackagePath": "build\\KitaBizde.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.KitaBizde.props",
+      "PackagePath": "buildMultiTargeting\\KitaBizde.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.KitaBizde.props",
+      "PackagePath": "buildTransitive\\KitaBizde.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
