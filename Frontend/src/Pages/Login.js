@@ -108,9 +108,12 @@ export default function Login() {
                 <p className="text-[#f00] text-xs">{errors.password}</p>
               )}
 
-              <button className="bg-sky-900 rounded-md text-white py-2 hover:scale-105 duration-300">
+              <Link
+                to={`${subForm && '/'}`}
+                className="flex items-center justify-center bg-sky-900 rounded-md text-white py-2 hover:scale-105 duration-300"
+              >
                 ورود
-              </button>
+              </Link>
             </form>
 
             <div className="mt-6 text-center text-gray-400">

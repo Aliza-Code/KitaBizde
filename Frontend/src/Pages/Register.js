@@ -1,12 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import signBG from "../img/SignBG.jpg";
-import { IoEyeOutline, IoEyeOffOutline } from "react-icons/io5";
 
 export default function Register() {
+  
+  const [newData, setNewData] = useState(null);
+  useEffect(() => {
+    fetch("api/Account/GetUsers")
+      .then((response) => response.json())
+      .then((newData) => console.log(newData));
+  }, []);
+
   const [values, setValues] = useState({
     phoneNumber: "",
     email: "",
@@ -90,11 +97,9 @@ export default function Register() {
       confirmPassword: values.confirmPassword,
     };
 
-    axios
-      .post("https://localhost:7010/api/Account/Register", data)
-      .then((res) => {
-        alert("User created successfully!");
-      });
+    axios.post("api/Account/Register", data).then((res) => {
+      alert("User created successfully!");
+    });
   };
 
   const handleChange = (e) => {

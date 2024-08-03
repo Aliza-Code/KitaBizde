@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import AdminSidebar from "../Components/AdminSidebar";
 
+const getEdit = async () => {
+  const res = await fetch("api/Admin/Books/Edit");
+  const body = await res.json();
+  return body.editData;
+};
+
 export default function AdminEditBook() {
+  
+  const [editData, setEditData] = useState(null);
+  const editFetch = async () => {
+    const editData = await getEdit();
+    setEditData(editData);
+  };
   return (
     <>
       <AdminSidebar></AdminSidebar>
@@ -274,7 +286,10 @@ export default function AdminEditBook() {
             />
           </div>
 
-          <button className="bg-green-500 py-1 text-lg text-white rounded-sm w-full mt-4">
+          <button
+            onClick={editFetch}
+            className="bg-green-500 py-1 text-lg text-white rounded-sm w-full mt-4"
+          >
             ذخیره اطلاعات جدید
           </button>
         </form>

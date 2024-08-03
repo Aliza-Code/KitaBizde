@@ -1,17 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import AdminSidebar from "../Components/AdminSidebar";
 import { Link } from "react-router-dom";
 import Cukur from "../img/Cukur.png";
 
 export default function AdminCourses() {
+   
+  const [newData, setNewData] = useState(null);
+  useEffect(() => {
+    fetch("api/Account/GetUsers")
+      .then((response) => response.json())
+      .then((newData) => console.log(newData));
+  }, []);  
+
   return (
     <>
       <AdminSidebar></AdminSidebar>
 
       <main className="w-full md:w-[calc(100%-256px)] md:mr-64 bg-gray-50 min-h-screen transition-all">
-        <h1 className="mt-6 text-center text-2xl text-sky-900 font-raybold">
-          لیست کتاب‌های سایت
-        </h1>
+        <div className="flex items-center justify-evenly flex-row-reverse">
+          <h1 className="mt-6 text-center text-2xl text-sky-900 font-raybold">
+            لیست کتاب‌های سایت
+          </h1>
+          <Link
+            to={"/admin/books/edit"}
+            className="bg-sky-300 text-black rounded-sm px-2 py-1"
+          >
+            افزودن
+          </Link>
+        </div>
 
         <div className="relative overflow-x-auto shadow-md sm:rounded-lg mt-8">
           <table className="w-full text-left rtl:text-right text-gray-500 dark:text-gray-400">
@@ -53,84 +69,8 @@ export default function AdminCourses() {
                     to={"/admin/books/create"}
                     className="mr-2 bg-sky-300 text-black rounded-sm px-2 py-1"
                   >
-                    افزودن
+                    حذف
                   </Link>
-                </td>
-              </tr>
-
-              <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                <td>
-                  <img src={Cukur} className="w-[130px] h-[130px]" alt="" />
-                </td>
-
-                <td className="px-6 py-4 text-base">چوکور</td>
-
-                <td className="px-6 py-4 text-base">244,000</td>
-
-                <td className="px-6 py-4">
-                  <button className="bg-sky-300 text-black rounded-sm px-2 py-1">
-                    ویرایش
-                  </button>
-                  <button className="mr-2 bg-sky-300 text-black rounded-sm px-2 py-1">
-                    افزودن
-                  </button>
-                </td>
-              </tr>
-
-              <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                <td>
-                  <img src={Cukur} className="w-[130px] h-[130px]" alt="" />
-                </td>
-
-                <td className="px-6 py-4 text-base">چوکور</td>
-
-                <td className="px-6 py-4 text-base">244,000</td>
-
-                <td className="px-6 py-4">
-                  <button className="bg-sky-300 text-black rounded-sm px-2 py-1">
-                    ویرایش
-                  </button>
-                  <button className="mr-2 bg-sky-300 text-black rounded-sm px-2 py-1">
-                    افزودن
-                  </button>
-                </td>
-              </tr>
-
-              <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                <td>
-                  <img src={Cukur} className="w-[130px] h-[130px]" alt="" />
-                </td>
-
-                <td className="px-6 py-4 text-base">چوکور</td>
-
-                <td className="px-6 py-4 text-base">244,000</td>
-
-                <td className="px-6 py-4">
-                  <button className="bg-sky-300 text-black rounded-sm px-2 py-1">
-                    ویرایش
-                  </button>
-                  <button className="mr-2 bg-sky-300 text-black rounded-sm px-2 py-1">
-                    افزودن
-                  </button>
-                </td>
-              </tr>
-
-              <tr>
-                <td>
-                  <img src={Cukur} className="w-[130px] h-[130px]" alt="" />
-                </td>
-
-                <td className="px-6 py-4 text-base">چوکور</td>
-
-                <td className="px-6 py-4 text-base">244,000</td>
-
-                <td className="px-6 py-4">
-                  <button className="bg-sky-300 text-black rounded-sm px-2 py-1">
-                    ویرایش
-                  </button>
-                  <button className="mr-2 bg-sky-300 text-black rounded-sm px-2 py-1">
-                    افزودن
-                  </button>
                 </td>
               </tr>
             </tbody>

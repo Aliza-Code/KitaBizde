@@ -53,6 +53,9 @@ export default function AdminSidebar() {
                     <a href="#">دسترسی‌ها</a>
                   </li>
                   <li>
+                    <Link to={"/admin/authors"}>نویسنده‌ها</Link>
+                  </li>
+                  <li>
                     <Link to={"/admin/users"}>کاربران</Link>
                   </li>
                   <li>

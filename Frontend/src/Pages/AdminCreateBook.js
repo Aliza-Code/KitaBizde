@@ -1,7 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import AdminSidebar from "../Components/AdminSidebar";
 
+const getCreate = async () => {
+  const res = await fetch("api/Admin/Books/Create");
+  const body = await res.json();
+  return body.createData;
+};
+
 export default function AdminCreateBook() {
+  
+  const [createData, setCreateData] = useState(null);
+  const createFetch = async () => {
+    const createData = await getCreate();
+    setCreateData(createData);
+  };
+
   return (
     <>
       <AdminSidebar></AdminSidebar>
@@ -274,7 +287,10 @@ export default function AdminCreateBook() {
             />
           </div>
 
-          <button className="bg-green-500 py-1 text-lg text-white rounded-sm w-full mt-4">
+          <button
+            onClick={createFetch}
+            className="bg-green-500 py-1 text-lg text-white rounded-sm w-full mt-4"
+          >
             ذخیره اطلاعات
           </button>
         </form>

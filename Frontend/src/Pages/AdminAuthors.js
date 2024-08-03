@@ -1,10 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from 'react'
 import AdminSidebar from "../Components/AdminSidebar";
 
-export default function AdminUsers() {
-
-
-  
+export default function AdminAuthors() {
   return (
     <>
       <AdminSidebar></AdminSidebar>
@@ -42,17 +39,17 @@ export default function AdminUsers() {
             <thead className="text-lg text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
                 <th scope="col" className="px-6 py-3">
-                  نام کاربری
+                  نام نویسنده
                 </th>
-                <th scope="col" className="px-6 py-3">
+                {/* <th scope="col" className="px-6 py-3">
                   ایمیل
-                </th>
-                <th scope="col" className="px-6 py-3">
+                </th> */}
+                {/* <th scope="col" className="px-6 py-3">
                   وضعیت
-                </th>
-                <th scope="col" className="px-6 py-3">
+                </th> */}
+                {/* <th scope="col" className="px-6 py-3">
                   تاریخ ثبت‌نام
-                </th>
+                </th> */}
                 <th scope="col" className="px-6 py-3">
                   عملیات
                 </th>
@@ -61,14 +58,8 @@ export default function AdminUsers() {
 
             <tbody>
               <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                <td className="px-6 py-4 text-base">علیرضا فرهودی</td>
-
-                <td className="px-6 py-4 text-base">alezafarhud@gmail.com</td>
-
-                <td>فعال</td>
-
-                <td>1403/03/14</td>
-
+                <td className="px-6 py-4 text-base">اورهان پاموک</td>
+                
                 <td className="px-6 py-4">
                   <button className="bg-sky-300 text-black rounded-sm px-2 py-1">
                     ویرایش
@@ -76,18 +67,15 @@ export default function AdminUsers() {
                   <button className="mr-2 bg-sky-300 text-black rounded-sm px-2 py-1">
                     افزودن
                   </button>
+                  <button className="mr-2 bg-sky-300 text-black rounded-sm px-2 py-1">
+                    حذف
+                  </button>
                 </td>
               </tr>
-
+              
               <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                <td className="px-6 py-4 text-base">علیرضا فرهودی</td>
-
-                <td className="px-6 py-4 text-base">alezafarhud@gmail.com</td>
-
-                <td>فعال</td>
-
-                <td>1403/03/14</td>
-
+                <td className="px-6 py-4 text-base">اورهان پاموک</td>
+                
                 <td className="px-6 py-4">
                   <button className="bg-sky-300 text-black rounded-sm px-2 py-1">
                     ویرایش
@@ -95,18 +83,15 @@ export default function AdminUsers() {
                   <button className="mr-2 bg-sky-300 text-black rounded-sm px-2 py-1">
                     افزودن
                   </button>
+                  <button className="mr-2 bg-sky-300 text-black rounded-sm px-2 py-1">
+                    حذف
+                  </button>
                 </td>
               </tr>
-
+              
               <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                <td className="px-6 py-4 text-base">علیرضا فرهودی</td>
-
-                <td className="px-6 py-4 text-base">alezafarhud@gmail.com</td>
-
-                <td>فعال</td>
-
-                <td>1403/03/14</td>
-
+                <td className="px-6 py-4 text-base">اورهان پاموک</td>
+                
                 <td className="px-6 py-4">
                   <button className="bg-sky-300 text-black rounded-sm px-2 py-1">
                     ویرایش
@@ -114,43 +99,40 @@ export default function AdminUsers() {
                   <button className="mr-2 bg-sky-300 text-black rounded-sm px-2 py-1">
                     افزودن
                   </button>
+                  <button className="mr-2 bg-sky-300 text-black rounded-sm px-2 py-1">
+                    حذف
+                  </button>
                 </td>
               </tr>
-
+              
               <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
-                <td className="px-6 py-4 text-base">علیرضا فرهودی</td>
-
-                <td className="px-6 py-4 text-base">alezafarhud@gmail.com</td>
-
-                <td>فعال</td>
-
-                <td>1403/03/14</td>
-
+                <td className="px-6 py-4 text-base">اورهان پاموک</td>
+                
                 <td className="px-6 py-4">
                   <button className="bg-sky-300 text-black rounded-sm px-2 py-1">
                     ویرایش
                   </button>
                   <button className="mr-2 bg-sky-300 text-black rounded-sm px-2 py-1">
                     افزودن
+                  </button>
+                  <button className="mr-2 bg-sky-300 text-black rounded-sm px-2 py-1">
+                    حذف
                   </button>
                 </td>
               </tr>
-
-              <tr>
-                <td className="px-6 py-4 text-base">علیرضا فرهودی</td>
-
-                <td className="px-6 py-4 text-base">alezafarhud@gmail.com</td>
-
-                <td>فعال</td>
-
-                <td>1403/03/14</td>
-
+              
+              <tr className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700">
+                <td className="px-6 py-4 text-base">اورهان پاموک</td>
+                
                 <td className="px-6 py-4">
                   <button className="bg-sky-300 text-black rounded-sm px-2 py-1">
                     ویرایش
                   </button>
                   <button className="mr-2 bg-sky-300 text-black rounded-sm px-2 py-1">
                     افزودن
+                  </button>
+                  <button className="mr-2 bg-sky-300 text-black rounded-sm px-2 py-1">
+                    حذف
                   </button>
                 </td>
               </tr>
@@ -159,5 +141,5 @@ export default function AdminUsers() {
         </div>
       </main>
     </>
-  );
+  )
 }

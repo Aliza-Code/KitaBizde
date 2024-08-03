@@ -11,6 +11,7 @@ import AdminBooks from "./Pages/AdminBooks";
 import AdminCreateBook from "./Pages/AdminCreateBook";
 import AdminEditBook from "./Pages/AdminEditBook";
 import AdminUsers from "./Pages/AdminUsers";
+import AdminAuthors from "./Pages/AdminAuthors";
 import User from "./Pages/User";
 import UserEdit from "./Pages/UserEdit";
 import UserPass from "./Pages/UserPass";
@@ -31,6 +32,7 @@ const routes = [
   { path: "/admin/books/create", element: <AdminCreateBook></AdminCreateBook> },
   { path: "/admin/books/edit", element: <AdminEditBook></AdminEditBook> },
   { path: "/admin/users", element: <AdminUsers></AdminUsers> },
+  { path: "/admin/authors", element: <AdminAuthors></AdminAuthors> },
   { path: "/user", element: <User></User> },
   { path: "/user/edit", element: <UserEdit></UserEdit> },
   { path: "/user/pass", element: <UserPass></UserPass> },
