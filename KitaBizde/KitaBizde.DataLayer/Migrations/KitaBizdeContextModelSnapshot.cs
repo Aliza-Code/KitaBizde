@@ -159,19 +159,16 @@ namespace KitaBizde.DataLayer.Migrations
                         .HasMaxLength(450)
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
-
                     b.Property<int>("Weight")
                         .HasColumnType("int");
 
                     b.HasKey("BookId");
 
+                    b.HasIndex("AuthorId");
+
                     b.HasIndex("GroupId");
 
                     b.HasIndex("LevelId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Books");
                 });
@@ -278,6 +275,38 @@ namespace KitaBizde.DataLayer.Migrations
                     b.ToTable("RolePermission");
                 });
 
+            modelBuilder.Entity("KitaBizde.DataLayer.Entities.User.Author", b =>
+                {
+                    b.Property<int>("AuthorId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("AuthorId"));
+
+                    b.Property<string>("AboutAuthor")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AuthorImage")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AuthorName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("AuthorTurkName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsDelete")
+                        .HasColumnType("bit");
+
+                    b.HasKey("AuthorId");
+
+                    b.ToTable("Authors");
+                });
+
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.User.Role", b =>
                 {
                     b.Property<int>("RoleId")
@@ -326,7 +355,6 @@ namespace KitaBizde.DataLayer.Migrations
                         .HasColumnType("nvarchar(200)");
 
                     b.Property<DateTime>("RegisterDate")
-                        .HasMaxLength(200)
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UserAvatar")
@@ -375,6 +403,12 @@ namespace KitaBizde.DataLayer.Migrations
 
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.Book.Books", b =>
                 {
+                    b.HasOne("KitaBizde.DataLayer.Entities.User.Author", "Author")
+                        .WithMany("Books")
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("KitaBizde.DataLayer.BookGroup", "BookGroup")
                         .WithMany("Books")
                         .HasForeignKey("GroupId")
@@ -387,9 +421,7 @@ namespace KitaBizde.DataLayer.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("KitaBizde.DataLayer.Entities.User.User", null)
-                        .WithMany("Books")
-                        .HasForeignKey("UserId");
+                    b.Navigation("Author");
 
                     b.Navigation("BookGroup");
 
@@ -399,7 +431,7 @@ namespace KitaBizde.DataLayer.Migrations
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.Order.Order", b =>
                 {
                     b.HasOne("KitaBizde.DataLayer.Entities.User.User", "User")
-                        .WithMany("Orders")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -461,7 +493,7 @@ namespace KitaBizde.DataLayer.Migrations
                         .IsRequired();
 
                     b.HasOne("KitaBizde.DataLayer.Entities.User.User", "User")
-                        .WithMany("UserRoles")
+                        .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -495,18 +527,14 @@ namespace KitaBizde.DataLayer.Migrations
                     b.Navigation("RolePermissions");
                 });
 
+            modelBuilder.Entity("KitaBizde.DataLayer.Entities.User.Author", b =>
+                {
+                    b.Navigation("Books");
+                });
+
             modelBuilder.Entity("KitaBizde.DataLayer.Entities.User.Role", b =>
                 {
                     b.Navigation("RolePermissions");
-
-                    b.Navigation("UserRoles");
-                });
-
-            modelBuilder.Entity("KitaBizde.DataLayer.Entities.User.User", b =>
-                {
-                    b.Navigation("Books");
-
-                    b.Navigation("Orders");
 
                     b.Navigation("UserRoles");
                 });

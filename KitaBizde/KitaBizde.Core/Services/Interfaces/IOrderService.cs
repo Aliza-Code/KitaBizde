@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KitaBizde.DataLayer.Entities.Order;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,5 +11,6 @@ namespace KitaBizde.Core.Services.Interfaces
     {
         int AddOrder(string userName, int bookId);
         void UpdatePriceOrder(int orderId);
+        Order GetOrderForUserPanel(string userName, int orderId);
     }
 }

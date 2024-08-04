@@ -2,6 +2,7 @@
 using KitaBizde.DataLayer.Context;
 using KitaBizde.DataLayer.Entities.Order;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -74,6 +75,15 @@ namespace KitaBizde.Core.Services
                 UpdatePriceOrder(order.OrderId);
             }
             return order.OrderId;
+        }
+
+        public Order GetOrderForUserPanel(string userName, int orderId)
+        {
+            int userId = _userService.GetUserIdByUserName(userName);
+            Console.WriteLine($"UserId: {userId}, OrderId: {orderId}");
+
+            return _context.Orders.Include(o => o.OrderDetails).ThenInclude(od => od.Books)
+                .FirstOrDefault(o => o.UserId == userId && o.OrderId == orderId);
         }
 
         public void UpdatePriceOrder(int orderId)

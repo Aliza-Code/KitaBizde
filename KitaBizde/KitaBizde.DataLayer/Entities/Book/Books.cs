@@ -17,8 +17,6 @@ namespace KitaBizde.DataLayer.Entities.Book
         [Required]
         public int GroupId { get; set; }
 
-        //public int? SubGroup { get; set; }
-
         [Required]
         public int AuthorId { get; set; }
 
@@ -95,8 +93,7 @@ namespace KitaBizde.DataLayer.Entities.Book
         #region Relations
 
         [ForeignKey("AuthorId")]
-        [NotMapped]
-        public User.Author? Author { get; set; }
+        public virtual User.Author? Author { get; set; }
 
         [ForeignKey("GroupId")]
         public BookGroup? BookGroup { get; set; }

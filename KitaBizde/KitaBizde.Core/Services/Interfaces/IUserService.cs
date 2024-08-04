@@ -1,4 +1,5 @@
 ﻿using KitaBizde.Core.DTOs;
+using KitaBizde.Core.DTOs.Author;
 using KitaBizde.Core.DTOs.Users;
 using KitaBizde.DataLayer.Entities.User;
 using Microsoft.AspNetCore.Mvc;
@@ -27,5 +28,27 @@ namespace KitaBizde.Core.Services.Interfaces
         UserForAdminViewModel GetUsers(int pageId = 1, string filterEmail = "", string filterUserName = "");
         void DeleteUser(int userId);
         public EditUserViewModel GetUserForShowInEditMode(int userId);
+
+
+        #region AdminPanel
+        //Author GetAuthorByAuthirId(int authirId);
+        List<Author> GetAuthorForAdmin();
+        int CreateAuthorFromAdmin(CreateAuthorViewModel author);
+        void EditAuthorFromAdmin(EditAuthorViewModel author);
+        void DeleteAuthorFromAdmin(int userId);
+        #endregion
+
+
+        #region UserPanel
+
+        InformationUserViewModel GetInformationUser(int userId);
+        InformationUserViewModel GetInformationUser(string userName);
+        EditProfileViewModel GetDataForEditProfileUser(int userId);
+        EditProfileViewModel EditProfileUser(EditProfileViewModel profileUser);
+        bool CompareOldPassword(string oldPassword, string username);
+        void ChangeUserPassword(int userId, string newPassword);
+        #endregion
+
+        AuthorWithBooksViewModel GetAuthor(int authorId);
     }
 }

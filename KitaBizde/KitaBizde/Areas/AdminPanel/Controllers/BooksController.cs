@@ -44,8 +44,7 @@ namespace KitaBizde.web.Areas.AdminPanel.Controllers
             {
                 return BadRequest(ModelState);
             }
-            
-            //book.PublishDate = DateTime.Now;
+          
             _bookService.AddBookFromAdmin(book);
             return Ok(book);
         }

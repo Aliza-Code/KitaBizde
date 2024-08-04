@@ -1,6 +1,18 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\Test-Final\\TestFinalAPI\\KitaBizde\\wwwroot\\AuthorImages\\1271e019bbc54006b5a38053e94af361.png",
+      "PackagePath": "staticwebassets\\AuthorImages\\1271e019bbc54006b5a38053e94af361.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\Test-Final\\TestFinalAPI\\KitaBizde\\wwwroot\\AuthorImages\\c234fa3957b34167b3c067f38e72adee.png",
+      "PackagePath": "staticwebassets\\AuthorImages\\c234fa3957b34167b3c067f38e72adee.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\Test-Final\\TestFinalAPI\\KitaBizde\\wwwroot\\AuthorImages\\d7ff1d3cbcae41748cb560d8716df983.png",
+      "PackagePath": "staticwebassets\\AuthorImages\\d7ff1d3cbcae41748cb560d8716df983.png"
+    },
+    {
       "Id": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\Test-Final\\TestFinalAPI\\KitaBizde\\wwwroot\\UserAvatars\\007963b1634e4b6b84aaf96b3b9fdb7f.JPG",
       "PackagePath": "staticwebassets\\UserAvatars\\007963b1634e4b6b84aaf96b3b9fdb7f.JPG"
     },
@@ -13,12 +25,24 @@
       "PackagePath": "staticwebassets\\UserAvatars\\4c7ebad979194db7944bb84db81401aa.JPG"
     },
     {
+      "Id": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\Test-Final\\TestFinalAPI\\KitaBizde\\wwwroot\\UserAvatars\\6155e4b08c54482b92c2de3628675288.png",
+      "PackagePath": "staticwebassets\\UserAvatars\\6155e4b08c54482b92c2de3628675288.png"
+    },
+    {
       "Id": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\Test-Final\\TestFinalAPI\\KitaBizde\\wwwroot\\UserAvatars\\8c18048a353b45f5bba8aa6398b671cb.JPG",
       "PackagePath": "staticwebassets\\UserAvatars\\8c18048a353b45f5bba8aa6398b671cb.JPG"
     },
     {
       "Id": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\Test-Final\\TestFinalAPI\\KitaBizde\\wwwroot\\UserAvatars\\dbb725dcf34749258868ecebf5a30d96.JPG",
       "PackagePath": "staticwebassets\\UserAvatars\\dbb725dcf34749258868ecebf5a30d96.JPG"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\Test-Final\\TestFinalAPI\\KitaBizde\\wwwroot\\UserAvatars\\ed35bfc5a156451c823de6a11fac2f00.png",
+      "PackagePath": "staticwebassets\\UserAvatars\\ed35bfc5a156451c823de6a11fac2f00.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\Test-Final\\TestFinalAPI\\KitaBizde\\wwwroot\\bookImages\\3eab3c0d221648d99c53725ed7fb6728.png",
+      "PackagePath": "staticwebassets\\bookImages\\3eab3c0d221648d99c53725ed7fb6728.png"
     },
     {
       "Id": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\Test-Final\\TestFinalAPI\\KitaBizde\\wwwroot\\bookImages\\82f5058415f34f6593d1c32c0487a146.png",
@@ -35,6 +59,10 @@
     {
       "Id": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\Test-Final\\TestFinalAPI\\KitaBizde\\wwwroot\\bookImages\\e22e878e90b943a586248cb5133788a4.png",
       "PackagePath": "staticwebassets\\bookImages\\e22e878e90b943a586248cb5133788a4.png"
+    },
+    {
+      "Id": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\Test-Final\\TestFinalAPI\\KitaBizde\\wwwroot\\bookImages\\f2299f4bf5694b24a5f0250df97db979.png",
+      "PackagePath": "staticwebassets\\bookImages\\f2299f4bf5694b24a5f0250df97db979.png"
     },
     {
       "Id": "C:\\Users\\Huawei\\CS-projects\\Asp.NetCoreAdvance\\Test-Final\\TestFinalAPI\\KitaBizde\\wwwroot\\bookImages\\f38d00ca403c405d85ba80c650f81072.png",

@@ -89,7 +89,8 @@ namespace KitaBizde.Core.Services
             var books=result.Select(b=>new ShowBookListItemViewModel()
             {
                 BookId = b.BookId,
-                ImageName1=b.BookImageName1.ToString(),
+                AuthorName = b.Author.AuthorName,
+                ImageName1 =b.BookImageName1.ToString(),
                 ImageName2=b.BookImageName1.ToString(),
                 Price=b.BookPrice,
                 Title=b.BookTitle,
@@ -237,5 +238,62 @@ namespace KitaBizde.Core.Services
             _context.SaveChanges();
         }
 
+        public List<ShowBookListItemViewModel> GetRomans(int pageId = 1, int take = 0)
+        {
+            if (take == 0)
+                take = 8;
+            IQueryable<Books> result = _context.Books.Where(b => b.GroupId == 1);
+            int skip = (pageId - 1) * take;
+            var books = result.Select(b => new ShowBookListItemViewModel()
+            {
+                AuthorName = b.Author.AuthorName,
+                BookId = b.BookId,
+                ImageName1 = b.BookImageName1.ToString(),
+                Price = b.BookPrice,
+                Title = b.BookTitle,
+                TurkTitle = b.TurkTitle
+            }).ToList();
+
+            var PaginatedBooks = books.Skip(skip).Take(take).ToList();
+            return PaginatedBooks;
+        }
+        public List<ShowBookListItemViewModel> GetEducational(int pageId = 1, int take = 0)
+        {
+            if (take == 0)
+                take = 8;
+            IQueryable<Books> result = _context.Books.Where(b => b.GroupId == 2);
+            int skip = (pageId - 1) * take;
+            var books = result.Select(b => new ShowBookListItemViewModel()
+            {
+                AuthorName = b.Author.AuthorName,
+                BookId = b.BookId,
+                ImageName1 = b.BookImageName1.ToString(),
+                Price = b.BookPrice,
+                Title = b.BookTitle,
+                TurkTitle = b.TurkTitle
+            }).ToList();
+
+            var PaginatedBooks = books.Skip(skip).Take(take).ToList();
+            return PaginatedBooks;
+        }
+        public List<ShowBookListItemViewModel> GetFavorites(int pageId = 1, int take = 0)
+        {
+            if (take == 0)
+                take = 8;
+            IQueryable<Books> result = _context.Books.Where(b => b.SoldCount>=15);
+            int skip = (pageId - 1) * take;
+            var books = result.Select(b => new ShowBookListItemViewModel()
+            {
+                AuthorName=b.Author.AuthorName,
+                BookId = b.BookId,
+                ImageName1 = b.BookImageName1.ToString(),
+                Price = b.BookPrice,
+                Title = b.BookTitle,
+                TurkTitle = b.TurkTitle
+            }).ToList();
+
+            var PaginatedBooks = books.Skip(skip).Take(take).ToList();
+            return PaginatedBooks;
+        }
     }
 }

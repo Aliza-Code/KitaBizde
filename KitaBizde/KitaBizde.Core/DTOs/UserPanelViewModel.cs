@@ -8,12 +8,27 @@ using System.Threading.Tasks;
 
 namespace KitaBizde.Core.DTOs
 {
+    public class InformationUserViewModel
+    {
+        public string UserName { get; set; }
+        public string PhoneNum { get; set; }
+        public string Email { get; set; }
+        public DateTime RegisterDate { get; set; }
+        public int? TotalBuy { get; set; }
+    }
     public class EditProfileViewModel
     {
+        public int UserId { get; set; }
+
         [Display(Name = "نام کاربری")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         [MaxLength(200, ErrorMessage = "{0}نمیتواند بیشتر از {1} کاراکتر باشد")]
         public string UserName { get; set; }
+
+        [Display(Name = "تلفن")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [MaxLength(200, ErrorMessage = "{0}نمیتواند بیشتر از {1} کاراکتر باشد")]
+        public string PhoneNum { get; set; }
 
         [Display(Name = "ایمیل")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
@@ -22,6 +37,25 @@ namespace KitaBizde.Core.DTOs
         public string Email { get; set; }
 
         public IFormFile UserAvatar { get; set; }       //It provides a way to handle file uploads
-        public string AvatarName { get; set; }
+        public string? AvatarName { get; set; }
+    }
+    public class ChangePasswordViewModel
+    {
+        [Display(Name = " کلمه عبور فعلی")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [MaxLength(200, ErrorMessage = "{0}نمیتواند بیشتر از {1} کاراکتر باشد")]
+        public string OldPassword { get; set; }
+
+        [Display(Name = "کلمه عبور")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [MaxLength(200, ErrorMessage = "{0}نمیتواند بیشتر از {1} کاراکتر باشد")]
+        public string Password { get; set; }
+
+        [Display(Name = "تکرار کلمه عبور")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
+        [MaxLength(200, ErrorMessage = "{0}نمیتواند بیشتر از {1} کاراکتر باشد")]
+        [Compare("Password", ErrorMessage = "کلمه های عبور مغایرت دارند")]  //baraye mogayese va yeksan budane 2password
+        public string RePassword { get; set; }
     }
 }
+

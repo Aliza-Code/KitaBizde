@@ -1,4 +1,5 @@
 ﻿using KitaBizde.DataLayer.Entities.Book;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -13,8 +14,8 @@ namespace KitaBizde.DataLayer.Entities.User
         [Key]
         public int AuthorId { get; set; }
 
-        [Display(Name="نام نویسنده")]
-        [Required(ErrorMessage ="لطفا {0} را وارد کنید")]
+        [Display(Name = "نام نویسنده")]
+        [Required(ErrorMessage = "لطفا {0} را وارد کنید")]
         public string AuthorName { get; set; }
 
         [Display(Name = "نام ترکی نویسنده")]
@@ -23,8 +24,9 @@ namespace KitaBizde.DataLayer.Entities.User
 
         public string AboutAuthor { get; set; }
 
-        //public Books AuthorBooks { get; set; }
+        public string AuthorImage { get; set; }
 
+        public bool IsDelete { get; set; }
 
 
 
