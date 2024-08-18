@@ -1,0 +1,1 @@
+naya yalanan baxisan?!
